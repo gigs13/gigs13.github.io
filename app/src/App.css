@@ -191,12 +191,14 @@ a {
   font-weight: 600;
   width: 40%;
   color: #4a4e51;
+  list-style: none;
 }
 .profile .list-content {
   float: left;
   width: 60%;
   text-align: left;
   font-weight: 300;
+  list-style: none;
 }
 .profile .contact-presentation {
   text-align: left;
@@ -368,7 +370,7 @@ a {
     width: 0%;
   }
   to {
-    width: 80%;
+    width: 85%;
   }
 }
 @keyframes skill_2 {
@@ -392,7 +394,7 @@ a {
     width: 0%;
   }
   to {
-    width: 60%;
+    width: 80%;
   }
 }
 @keyframes skill_5 {
