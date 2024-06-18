@@ -6,7 +6,6 @@ import Navbar from "./components/navbar";
 import Resumen from "./components/resumen";
 import Experiencia from "./components/experiencia";
 import Habilidades from "./components/habilidades";
-import Aficiones from "./components/aficiones";
 
 export const UserContext = React.createContext();
 
@@ -42,7 +41,6 @@ function App() {
           <h3 class="experience-title">Experience</h3>
           <Experiencia />
           <Habilidades />
-          <Aficiones />
         </div>
       </HelmetProvider>
     </UserContext.Provider>
