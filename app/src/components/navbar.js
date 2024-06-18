@@ -1,5 +1,4 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -14,7 +13,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Experience", "Skills", "Contact"];
@@ -50,77 +48,66 @@ function Navbar(props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
-  const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-      primary: {
-        main: "#1976d2",
-      },
-    },
-  });
-
   return (
     <Box sx={{ display: "flex" }}>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
-        <AppBar component="nav" color="primary">
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                textAlign: "left",
-                display: { xs: "none", sm: "block" },
-              }}
-            >
-              Rodrigo Sánchez Isunza
-            </Typography>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navItems.map((item) => (
-                <a href={`#${item.toLocaleLowerCase()}`}>
-                  <Button key={item} sx={{ color: "#fff" }}>
-                    {item}
-                  </Button>
-                </a>
-              ))}
-            </Box>
-          </Toolbar>
-        </AppBar>
-        <nav>
-          <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
+      <CssBaseline />
+      <AppBar component="nav" color="primary">
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
             sx={{
-              display: { xs: "block", sm: "none" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: drawerWidth,
-              },
+              flexGrow: 1,
+              textAlign: "left",
+              display: { xs: "none", sm: "block" },
             }}
           >
-            {drawer}
-          </Drawer>
-        </nav>
-        <Box component="main" sx={{ p: 3 }}>
-          <Toolbar />
-          <Typography />
-        </Box>
-      </ThemeProvider>
+            Rodrigo Sánchez Isunza
+          </Typography>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {navItems.map((item) => (
+              <a href={`#${item.toLocaleLowerCase()}`}>
+                <Button key={item} sx={{ color: "#fff" }}>
+                  {item}
+                </Button>
+              </a>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>
+      <Box component="main" sx={{ p: 3 }}>
+        <Toolbar />
+        <Typography />
+      </Box>
     </Box>
   );
 }

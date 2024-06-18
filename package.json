@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@fontsource/montserrat": "^5.0.18",
     "create-react-app": "^1.2.1",
     "gh-pages": "^6.1.1",
     "react-helmet-async": "^2.0.5"

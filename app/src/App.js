@@ -6,6 +6,7 @@ import Navbar from "./components/navbar";
 import Resumen from "./components/resumen";
 import Experiencia from "./components/experiencia";
 import Habilidades from "./components/habilidades";
+import { Box } from "@mui/material";
 
 export const UserContext = React.createContext();
 
@@ -34,14 +35,12 @@ function App() {
           type="resume"
         />
 
-        <div className="resume-wrapper">
+        <Box>
           <Navbar />
-          {/* Sección de presentación */}
           <Resumen user={user} />
-          <h3 class="experience-title">Experience</h3>
           <Experiencia />
           <Habilidades />
-        </div>
+        </Box>
       </HelmetProvider>
     </UserContext.Provider>
   );

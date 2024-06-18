@@ -7,7 +7,17 @@ import {
   Typography,
   List,
   ListItem,
+  ListItemButton,
+  ListItemText,
+  ListItemIcon,
 } from "@mui/material";
+import CallRoundedIcon from "@mui/icons-material/CallRounded";
+import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
+import { ReactComponent as GithubSvg } from "../assets/logo/github-mark.svg";
+import SvgIcon from "@mui/material/SvgIcon";
 import { UserContext } from "../App";
 import imagen from "../assets/resumePhoto.jpeg";
 
@@ -44,7 +54,7 @@ export default function Resumen() {
           alignItems="center"
           gap={4}
           p={4}
-          sx={{ border: "2px solid grey" }}
+          sx={{ border: "2px solid grey", borderRadius: 1 }}
         >
           <Typography>
             <span className="bold">Motivated</span> team player with experience
@@ -53,36 +63,74 @@ export default function Resumen() {
             Django, Node.js and React to create powerful solutions.
           </Typography>
         </Box>
-        <Grid container xs={6} spacing={2}>
-          <List>
-            <ListItem>Call</ListItem>
-            <ListItem>Mail</ListItem>
-            <ListItem>Web</ListItem>
-            <ListItem>Home</ListItem>
-          </List>
-
-          <List>
-            <ListItem>{user.phone}</ListItem>
-            <ListItem>{user.mail}</ListItem>
-            <ListItem>
-              <a href={user.website}>{user.website}</a>
-            </ListItem>
-            <ListItem>{`${user.city}, ${user.country}`}</ListItem>
-          </List>
-        </Grid>
-        <Grid container xs={6} spacing={2}>
-          <List>
-            <ListItem>LinkedIn</ListItem>
-            <ListItem>Github</ListItem>
-          </List>
-          <List>
-            <ListItem>
-              <a href={user.linkedinUrl}>{user.linkedinUser}</a>
-            </ListItem>
-            <ListItem>
-              <a href={user.githubUrl}>{user.githubUser}</a>
-            </ListItem>
-          </List>
+        <Grid container justifyContent="center">
+          <Grid container xs={7} spacing={4} justifyContent="center">
+            <List>
+              <ListItem>
+                <ListItemIcon>
+                  <CallRoundedIcon color="secondary" />
+                </ListItemIcon>
+                <ListItemText>{user.phone}</ListItemText>
+              </ListItem>
+              <ListItemButton component="a" href="#contact">
+                <ListItemIcon>
+                  <EmailRoundedIcon color="secondary" />
+                </ListItemIcon>
+                <ListItemText>{user.mail}</ListItemText>
+              </ListItemButton>
+              <ListItemButton component="a" href={user.website}>
+                <ListItemIcon>
+                  <LanguageRoundedIcon color="secondary" />
+                </ListItemIcon>
+                <ListItemText
+                  primary={user.website}
+                  primaryTypographyProps={{
+                    color: "secondary",
+                    fontWeight: "medium",
+                    variant: "body2",
+                  }}
+                ></ListItemText>
+              </ListItemButton>
+              <ListItem>
+                <ListItemIcon>
+                  <HomeRoundedIcon color="secondary" />
+                </ListItemIcon>
+                <ListItemText>{`${user.city}, ${user.country}`}</ListItemText>
+              </ListItem>
+            </List>
+          </Grid>
+          <Grid container xs={5} spacing={2}>
+            <List>
+              <ListItemButton component="a" href={user.linkedinUrl}>
+                <ListItemIcon>
+                  <WorkRoundedIcon color="secondary" />
+                </ListItemIcon>
+                <ListItemText
+                  primary={user.linkedinUser}
+                  primaryTypographyProps={{
+                    color: "primary",
+                    fontWeight: "medium",
+                    variant: "body2",
+                  }}
+                ></ListItemText>
+              </ListItemButton>
+              <ListItemButton component="a" href={user.githubUrl}>
+                <ListItemIcon>
+                  <SvgIcon color="secondary">
+                    <GithubSvg />
+                  </SvgIcon>
+                </ListItemIcon>
+                <ListItemText
+                  primary={user.githubUser}
+                  primaryTypographyProps={{
+                    color: "primary",
+                    fontWeight: "medium",
+                    variant: "body2",
+                  }}
+                ></ListItemText>
+              </ListItemButton>
+            </List>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
