@@ -17,7 +17,7 @@ import Button from "@mui/material/Button";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact", "Experience"];
+const navItems = ["Home", "About", "Experience", "Skills", "Contact"];
 
 function Navbar(props) {
   const { window } = props;
