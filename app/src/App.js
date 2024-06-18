@@ -1,4 +1,7 @@
 import "./App.css";
+import { HelmetProvider } from "react-helmet-async";
+import SEO from "./components/seo";
+import Navbar from "./components/navbar";
 import Animacion from "./components/animacion";
 import Nombre from "./components/nombre";
 import Contacto from "./components/contacto";
@@ -24,18 +27,17 @@ const me = {
 
 function App() {
   return (
-    <html>
-      <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
-        ></meta>
-        {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js" ></script> */}
-      </head>
+    <HelmetProvider>
+      <SEO
+        title="Rodrigo Sánchez Isunza"
+        description="My resume app created with Facebook library."
+        name="Rodrigo's resume"
+        type="resume"
+      />
 
       <div className="resume-wrapper">
         <section className="profile section-padding">
-          {" "}
+          <Navbar />
           {/* Sección de presentación */}
           <Animacion />
           <Nombre user={me} />
@@ -56,7 +58,7 @@ function App() {
           </div>
         </section>
       </div>
-    </html>
+    </HelmetProvider>
   );
 }
 
