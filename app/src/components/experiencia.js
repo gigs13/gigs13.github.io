@@ -1,8 +1,6 @@
 export default function Experiencia() {
   return (
-    <div className="experience-wrapper">
-      {" "}
-      {/* Experiencia */}
+    <div id="experience">
       <div className="company-wrapper clearfix">
         <div className="experience-title">Drop Climbing</div>{" "}
         {/* NAME OF THE COMPANY YOUWORK WITH  */}
