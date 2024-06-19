@@ -5,7 +5,13 @@ import { Box, Grid } from "@mui/material";
 export default function Experiencias() {
   return (
     <Box id="experience">
-      <Grid container md={12} direction="row" alignItems="center">
+      <Grid
+        container
+        spacing={2}
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <NavegacionExperiencia />
         <Experiencia />
       </Grid>

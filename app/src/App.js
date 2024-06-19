@@ -38,7 +38,7 @@ function App() {
         <Box>
           <Navbar />
           <Resumen />
-          <Divider />
+          <Divider variant="middle" />
           <Experiencias />
           <Habilidades />
         </Box>
