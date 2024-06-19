@@ -56,7 +56,7 @@ export default function Resumen() {
           p={4}
           sx={{ border: "2px solid grey", borderRadius: 1 }}
         >
-          <Typography>
+          <Typography align="center">
             <span className="bold">Motivated</span> team player with experience
             developing, deploying, and maintaining software solutions.
             Well-versed in using cutting-edge technologies, such as AWS, Python,

@@ -4,9 +4,9 @@ import { HelmetProvider } from "react-helmet-async";
 import SEO from "./components/seo";
 import Navbar from "./components/navbar";
 import Resumen from "./components/resumen";
-import Experiencia from "./components/experiencia";
+import Experiencias from "./components/experiencias";
 import Habilidades from "./components/habilidades";
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 
 export const UserContext = React.createContext();
 
@@ -37,8 +37,9 @@ function App() {
 
         <Box>
           <Navbar />
-          <Resumen user={user} />
-          <Experiencia />
+          <Resumen />
+          <Divider />
+          <Experiencias />
           <Habilidades />
         </Box>
       </HelmetProvider>
