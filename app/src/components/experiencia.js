@@ -28,7 +28,7 @@ export default function Experiencia() {
           subheader={<li />}
         >
           {data.experiences.map((experience) => (
-            <List>
+            <li>
               <ListSubheader>
                 <ListItem key={`experience-${experience.id}`}>
                   <ListItemIcon>{/* {experience.icon} */}</ListItemIcon>
@@ -64,7 +64,7 @@ export default function Experiencia() {
                   ))}
                 </ListItem>
               ))}
-            </List>
+            </li>
           ))}
         </List>
       </Grid>
