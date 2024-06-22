@@ -13,11 +13,27 @@ import {
   Toolbar,
   Typography,
   Button,
+  Slide,
+  useScrollTrigger,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Experience", "Skills", "Contact"];
+
+function HideOnScroll(props) {
+  const { children, window } = props;
+
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
 
 function Navbar(props) {
   const { window } = props;
@@ -53,39 +69,41 @@ function Navbar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" color="primary">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              textAlign: "left",
-              display: { xs: "none", sm: "block" },
-            }}
-          >
-            Rodrigo Sánchez Isunza
-          </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <a href={`#${item.toLocaleLowerCase()}`}>
-                <Button key={item} sx={{ color: "#fff" }}>
-                  {item}
-                </Button>
-              </a>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
+      <HideOnScroll {...props}>
+        <AppBar component="nav" color="primary">
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                flexGrow: 1,
+                textAlign: "left",
+                display: { xs: "none", sm: "block" },
+              }}
+            >
+              Rodrigo's resume'
+            </Typography>
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              {navItems.map((item) => (
+                <a href={`#${item.toLocaleLowerCase()}`}>
+                  <Button key={item} sx={{ color: "#fff" }}>
+                    {item}
+                  </Button>
+                </a>
+              ))}
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
       <nav>
         <Drawer
           container={container}
@@ -113,6 +131,15 @@ function Navbar(props) {
     </Box>
   );
 }
+
+// HideOnScroll.propTypes = {
+//   children: PropTypes.element.isRequired,
+//   /**
+//    * Injected by the documentation to work in an iframe.
+//    * You won't need it on your project.
+//    */
+//   window: PropTypes.func,
+// };
 
 // Navbar.propTypes = {
 //   /**
