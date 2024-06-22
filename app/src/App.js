@@ -32,7 +32,7 @@ function App() {
           title={`${user.name} ${user.lastName}`}
           description="My resume app created with Facebook library."
           name={`${user.name}'s resume`}
-          type="resume"
+          type="website"
         />
 
         <Box>

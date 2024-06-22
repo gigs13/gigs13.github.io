@@ -11,18 +11,14 @@ export default function Experiencia({
   experience,
   activeExperience,
   setActiveExperience,
-  pageHeight = 100,
   refs,
 }) {
-  const observerMargin = Math.floor(pageHeight / 2);
   const activeClass =
-    activeExperience === experience.id ? "secondary" : "text.secondary";
-
+    activeExperience == experience.id ? "secondary" : "text.secondary";
   useEffect(() => {
     const observerConfig = {
-      rootMargin: `-${
-        pageHeight % 2 === 0 ? observerMargin - 1 : observerMargin
-      }px 0px -${observerMargin}px 0px`,
+      rootMargin: "-50% 33.3% -50% 0%",
+      threshold: 0,
     };
     const handleIntersection = function (entries) {
       entries.forEach((entry) => {
@@ -35,21 +31,15 @@ export default function Experiencia({
       handleIntersection,
       observerConfig
     );
-    observer.observe(refs[experience.id].current);
+    observer.observe(refs[experience.shortName].current);
+
     return () => observer.disconnect(); // Clenaup the observer if component unmount.
-  }, [
-    activeExperience,
-    setActiveExperience,
-    experience,
-    refs,
-    observerMargin,
-    pageHeight,
-  ]);
+  }, [activeExperience, setActiveExperience, experience, refs]);
 
   return (
     <>
       <ListSubheader>
-        <ListItem key={`experience-${experience.id}`} ref={refs[experience.id]}>
+        <ListItem ref={refs[experience.shortName]} id={experience.id}>
           <ListItemIcon>{/* {experience.icon} */}</ListItemIcon>
           <ListItemText>
             <Typography variant="h4" color={activeClass}>
