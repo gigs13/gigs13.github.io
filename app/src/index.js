@@ -1,13 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createTheme, ThemeProvider } from "@mui/material";
+import "@fontsource/montserrat";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+export const theme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#4caf50",
+    },
+    secondary: {
+      main: "#64dd17",
+    },
+    error: {
+      main: "#ff3d00",
+    },
+    success: {
+      main: "#2e7d32",
+    },
+  },
+  typography: {
+    fontFamily: "Montserrat",
+  },
+  shape: {
+    borderRadius: 8,
+  },
+});
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
