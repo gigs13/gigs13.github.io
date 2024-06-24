@@ -14,7 +14,7 @@ export default function Experiencia({
   refs,
 }) {
   const activeClass =
-    activeExperience == experience.id ? "secondary" : "text.secondary";
+    activeExperience === experience.id ? "secondary" : "text.secondary";
   useEffect(() => {
     const observerConfig = {
       rootMargin: "-50% 33.3% -50% 0%",
@@ -23,7 +23,7 @@ export default function Experiencia({
     const handleIntersection = function (entries) {
       entries.forEach((entry) => {
         if (entry.target.id !== activeExperience && entry.isIntersecting) {
-          setActiveExperience(entry.target.id);
+          setActiveExperience(Number(entry.target.id));
         }
       });
     };

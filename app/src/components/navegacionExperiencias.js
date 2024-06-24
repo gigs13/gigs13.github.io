@@ -10,7 +10,7 @@ export default function NavegacionExperiencia({
       {experiences.map((experience) => (
         <ListItem key={experience.shortName} id={experience.shortName}>
           <ListItemButton
-            selected={activeExperience == experience.id ? true : false}
+            selected={activeExperience === experience.id ? true : false}
             onClick={() => handleListItemClick(experience.shortName)}
           >
             <ListItemText primary={experience.shortName} />

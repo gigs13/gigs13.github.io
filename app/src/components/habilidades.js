@@ -1,11 +1,10 @@
 import { Box, Paper, Collapse, Typography, Grid } from "@mui/material";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { UserContext } from "../App";
 
 export default function Habilidades() {
   const skills = useContext(UserContext).skills;
   const hobbies = useContext(UserContext).hobbies;
-  const containerRef = useRef(null);
 
   return (
     <Grid
