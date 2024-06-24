@@ -46,7 +46,7 @@ function Navbar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Rodrig Sánchez Isunza
+        Rodrigo Sánchez Isunza
       </Typography>
       <Divider />
       <List>
@@ -90,7 +90,7 @@ function Navbar(props) {
                 display: { xs: "none", sm: "block" },
               }}
             >
-              Rodrigo's resume'
+              Rodrigo's resume
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (

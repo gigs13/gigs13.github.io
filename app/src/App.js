@@ -6,24 +6,13 @@ import Navbar from "./components/navbar";
 import Resumen from "./components/resumen";
 import Experiencias from "./components/experiencias";
 import Habilidades from "./components/habilidades";
+import data from "./data/data.json";
 import { Box, Divider } from "@mui/material";
 
 export const UserContext = React.createContext();
 
 function App() {
-  const user = {
-    name: "Rodrigo",
-    lastName: "Sánchez Isunza",
-    phone: "+52 55 4854 1120",
-    mail: "rodrigoisunza@gmail.com",
-    website: "https://gigs13.github.io/",
-    country: "Mexico",
-    city: "Mexico City",
-    linkedinUser: "rodrigoisunza",
-    linkedinUrl: "https://linkedin.com/in/rodrigoisunza",
-    githubUser: "gigs13",
-    githubUrl: "https://github.com/gigs13",
-  };
+  const user = data;
 
   return (
     <UserContext.Provider value={user}>
@@ -35,11 +24,12 @@ function App() {
           type="website"
         />
 
-        <Box>
+        <Box sx={{ p: 1 }}>
           <Navbar />
           <Resumen />
           <Divider variant="middle" />
           <Experiencias />
+          <Divider variant="middle" />
           <Habilidades />
         </Box>
       </HelmetProvider>
