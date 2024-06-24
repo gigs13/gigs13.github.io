@@ -1,11 +1,12 @@
 import NavegacionExperiencia from "./navegacionExperiencias";
 import Experiencia from "./experiencia";
-import data from "../data/data.json";
+import { UserContext } from "../App";
 import { Box, Grid, List } from "@mui/material";
-import { useState, createRef } from "react";
+import { useContext, useState, createRef } from "react";
 
 export default function Experiencias() {
-  const experiences = data.experiences;
+  const experiences = useContext(UserContext).experiences;
+
   const [activeExperience, setActiveExperience] = useState();
 
   const refs = experiences.reduce((refsObj, experience) => {
@@ -14,7 +15,6 @@ export default function Experiencias() {
   }, {});
 
   const handleCLick = (shortName) => {
-    // console.log("handle click", activeExperience);
     refs[shortName].current.scrollIntoView({
       behavior: "smooth",
       block: "center",

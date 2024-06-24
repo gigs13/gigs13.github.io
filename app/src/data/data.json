@@ -14,6 +14,10 @@
     "user": "gigs13",
     "url": "https://github.com/gigs13"
   },
+  "polywork": {
+    "user": "rodrigo_sanchezisunza",
+    "url": "https://www.polywork.com/rodrigo_sanchezisunza"
+  },
   "experiences": [
     {
       "id": 0,
@@ -281,6 +285,61 @@
           ]
         }
       ]
+    }
+  ],
+  "skills": [
+    {
+      "id": 0,
+      "category": "frontend",
+      "name": "Javascript / NodeJS / React / Angular",
+      "percentage": 85
+    },
+    {
+      "id": 1,
+      "category": "backend",
+      "name": "Python / Django",
+      "percentage": 65
+    },
+    {
+      "id": 2,
+      "category": "databases",
+      "name": "MySQL / PostgreSQL / MongoDB / Redis",
+      "percentage": 70
+    },
+    {
+      "id": 3,
+      "category": "ux",
+      "name": "HTML5 / CSS3 / SASS / Figma / Adobe XD",
+      "percentage": 90
+    },
+    {
+      "id": 4,
+      "category": "devops",
+      "name": "Docker / Kubernetes",
+      "percentage": 55
+    },
+    {
+      "id": 5,
+      "category": "devops",
+      "name": "AWS / GCP / Azure",
+      "percentage": 75
+    }
+  ],
+  "hobbies": [
+    {
+      "name": "Rock Climbing",
+      "description": "Rock Climbing is my favorite hobby just because it is about going out and getting to feel and be with nature.",
+      "more": "url de 8a.nu"
+    },
+    {
+      "name": "Reading",
+      "description": "I love reading as many books as I can, novels, biographies, fiction, self-help and business books.",
+      "more": "https://www.goodreads.com/user/show/114539750-rodrigo-isunza"
+    },
+    {
+      "name": "Programming",
+      "description": "To this date and since I was a little kid I love getting my hands dirty and play witch tech. If I can create/program something with my hands I am more than pleased.",
+      "more": "perfil de github"
     }
   ]
 }

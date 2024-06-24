@@ -47,12 +47,10 @@ export default function Resumen() {
               src={imagen}
               sx={{ width: 256, height: 256 }}
             />
-            <Typography>
-              <h1>
-                {user.name}
-                <br />
-                {user.lastName}
-              </h1>
+            <Typography variant="h3">
+              {user.name}
+              <br />
+              {user.lastName}
             </Typography>
           </Stack>
         </Grid>
@@ -65,7 +63,7 @@ export default function Resumen() {
             p={4}
             sx={{ border: "2px solid grey", borderRadius: 1 }}
           >
-            <Typography align="center">
+            <Typography variant="h5" align="center">
               <span className="bold">Motivated</span> team player with
               experience developing, deploying, and maintaining software
               solutions. Well-versed in using cutting-edge technologies, such as
@@ -111,12 +109,12 @@ export default function Resumen() {
             </Grid>
             <Grid container xs={5} spacing={2}>
               <List>
-                <ListItemButton component="a" href={user.linkedinUrl}>
+                <ListItemButton component="a" href={user.linkedin.url}>
                   <ListItemIcon>
                     <WorkRoundedIcon color="secondary" />
                   </ListItemIcon>
                   <ListItemText
-                    primary={user.linkedinUser}
+                    primary={user.linkedin.user}
                     primaryTypographyProps={{
                       color: "primary",
                       fontWeight: "medium",
@@ -124,14 +122,14 @@ export default function Resumen() {
                     }}
                   ></ListItemText>
                 </ListItemButton>
-                <ListItemButton component="a" href={user.githubUrl}>
+                <ListItemButton component="a" href={user.github.url}>
                   <ListItemIcon>
                     <SvgIcon color="secondary">
                       <GithubSvg />
                     </SvgIcon>
                   </ListItemIcon>
                   <ListItemText
-                    primary={user.githubUser}
+                    primary={user.github.user}
                     primaryTypographyProps={{
                       color: "primary",
                       fontWeight: "medium",
