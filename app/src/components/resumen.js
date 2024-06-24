@@ -35,11 +35,13 @@ export default function Resumen() {
     >
       <Grid id="about" container spacing={2}>
         <Grid
-          container
-          xs={5}
+          item
+          xs={3}
           justifyContent="center"
           alignItems="center"
-          columnSpacing={6}
+          sx={{
+            p: 4,
+          }}
         >
           <Stack>
             <Avatar
@@ -54,7 +56,7 @@ export default function Resumen() {
             </Typography>
           </Stack>
         </Grid>
-        <Grid container xs={7} justifyContent="center" alignItems="center">
+        <Grid item xs={9} justifyContent="center" alignItems="center">
           <Box
             my={4}
             display="flex"
@@ -72,7 +74,7 @@ export default function Resumen() {
             </Typography>
           </Box>
           <Grid container justifyContent="center">
-            <Grid container xs={7} spacing={4} justifyContent="center">
+            <Grid item xs={7} justifyContent="center">
               <List>
                 <ListItem>
                   <ListItemIcon>
@@ -107,7 +109,7 @@ export default function Resumen() {
                 </ListItem>
               </List>
             </Grid>
-            <Grid container xs={5} spacing={2}>
+            <Grid item xs={5}>
               <List>
                 <ListItemButton component="a" href={user.linkedin.url}>
                   <ListItemIcon>

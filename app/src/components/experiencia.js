@@ -58,6 +58,7 @@ export default function Experiencia({
           />
           {job.projects.map((project) => (
             <ListItemText
+              key={project.id}
               primary={`${project.title}`}
               secondary={
                 <Typography
@@ -67,7 +68,7 @@ export default function Experiencia({
                   color="text.secondary"
                 >
                   {project.description.map((description) => (
-                    <ListItemText>{description}</ListItemText>
+                    <ListItemText key={description}>{description}</ListItemText>
                   ))}
                 </Typography>
               }

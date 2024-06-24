@@ -51,7 +51,7 @@ function Navbar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <a href={`#${item.toLocaleLowerCase()}`}>
+          <a key={item} href={`#${item.toLocaleLowerCase()}`}>
             <ListItem key={item} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText primary={item} />
@@ -94,7 +94,7 @@ function Navbar(props) {
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
-                <a href={`#${item.toLocaleLowerCase()}`}>
+                <a key={item} href={`#${item.toLocaleLowerCase()}`}>
                   <Button key={item} sx={{ color: "#fff" }}>
                     {item}
                   </Button>
