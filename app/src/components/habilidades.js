@@ -1,11 +1,10 @@
 import { Box, Paper, Collapse, Typography, Grid } from "@mui/material";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { UserContext } from "../App";
 
 export default function Habilidades() {
   const skills = useContext(UserContext).skills;
   const hobbies = useContext(UserContext).hobbies;
-  const containerRef = useRef(null);
 
   return (
     <Grid
@@ -13,7 +12,7 @@ export default function Habilidades() {
       container
       justifyContent="center"
       alignItems="center"
-      spacing={1}
+      spacing={2}
       sx={{
         pl: 4,
         pt: 4,
@@ -64,7 +63,7 @@ export default function Habilidades() {
           </Grid>
         ))}
       </Grid>
-      <Grid item xs={6} spacing={2}>
+      <Grid item xs={6}>
         <Typography variant="h5" color="secondary">
           Hobbies
         </Typography>
