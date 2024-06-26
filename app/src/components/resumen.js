@@ -1,28 +1,20 @@
 import { useContext } from "react";
-import {
-  Box,
-  Stack,
-  Grid,
-  Avatar,
-  Typography,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  ListItemIcon,
-} from "@mui/material";
-import CallRoundedIcon from "@mui/icons-material/CallRounded";
-import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
-import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
-import { ReactComponent as GithubSvg } from "../assets/logo/github-mark.svg";
-import SvgIcon from "@mui/material/SvgIcon";
+import { Box, Stack, Grid, Avatar, Typography, Button } from "@mui/material";
+import DownloadForOfflineRoundedIcon from "@mui/icons-material/DownloadForOfflineRounded";
 import { UserContext } from "../App";
 import imagen from "../assets/resumePhoto.jpeg";
+import resume from "../assets/documents/Rodrigo's Resume.pdf";
 
 export default function Resumen() {
   const user = useContext(UserContext);
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.download = "Rodrigo's Resume";
+    link.href = resume;
+    link.click();
+  };
+
   return (
     <Box
       sx={{
@@ -73,74 +65,19 @@ export default function Resumen() {
               solutions.
             </Typography>
           </Box>
-          <Grid container justifyContent="center">
-            <Grid item xs={7} justifyContent="center">
-              <List>
-                <ListItem>
-                  <ListItemIcon>
-                    <CallRoundedIcon color="secondary" />
-                  </ListItemIcon>
-                  <ListItemText>{user.phone}</ListItemText>
-                </ListItem>
-                <ListItemButton component="a" href="#contact">
-                  <ListItemIcon>
-                    <EmailRoundedIcon color="secondary" />
-                  </ListItemIcon>
-                  <ListItemText>{user.mail}</ListItemText>
-                </ListItemButton>
-                <ListItemButton component="a" href={user.website}>
-                  <ListItemIcon>
-                    <LanguageRoundedIcon color="secondary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={user.website}
-                    primaryTypographyProps={{
-                      color: "secondary",
-                      fontWeight: "medium",
-                      variant: "body2",
-                    }}
-                  ></ListItemText>
-                </ListItemButton>
-                <ListItem>
-                  <ListItemIcon>
-                    <HomeRoundedIcon color="secondary" />
-                  </ListItemIcon>
-                  <ListItemText>{`${user.city}, ${user.country}`}</ListItemText>
-                </ListItem>
-              </List>
-            </Grid>
-            <Grid item xs={5}>
-              <List>
-                <ListItemButton component="a" href={user.linkedin.url}>
-                  <ListItemIcon>
-                    <WorkRoundedIcon color="secondary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={user.linkedin.user}
-                    primaryTypographyProps={{
-                      color: "primary",
-                      fontWeight: "medium",
-                      variant: "body2",
-                    }}
-                  ></ListItemText>
-                </ListItemButton>
-                <ListItemButton component="a" href={user.github.url}>
-                  <ListItemIcon>
-                    <SvgIcon color="secondary">
-                      <GithubSvg />
-                    </SvgIcon>
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={user.github.user}
-                    primaryTypographyProps={{
-                      color: "primary",
-                      fontWeight: "medium",
-                      variant: "body2",
-                    }}
-                  ></ListItemText>
-                </ListItemButton>
-              </List>
-            </Grid>
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            sx={{ pt: 6 }}
+          >
+            <Button
+              variant="contained"
+              onClick={handleDownload}
+              endIcon={<DownloadForOfflineRoundedIcon />}
+            >
+              Download CV
+            </Button>
           </Grid>
         </Grid>
       </Grid>

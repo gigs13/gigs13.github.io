@@ -19,7 +19,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Experience", "Skills", "Contact"];
+const navItems = ["About", "Experience", "Skills", "Contact"];
 
 function HideOnScroll(props) {
   const { children, window } = props;
