@@ -19,7 +19,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Experience", "Skills", "Contact"];
+const navItems = ["About", "Experience", "Skills", "Contact"];
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -131,22 +131,5 @@ function Navbar(props) {
     </Box>
   );
 }
-
-// HideOnScroll.propTypes = {
-//   children: PropTypes.element.isRequired,
-//   /**
-//    * Injected by the documentation to work in an iframe.
-//    * You won't need it on your project.
-//    */
-//   window: PropTypes.func,
-// };
-
-// Navbar.propTypes = {
-//   /**
-//    * Injected by the documentation to work in an iframe.
-//    * You won't need it on your project.
-//    */
-//   window: PropTypes.func,
-// };
 
 export default Navbar;

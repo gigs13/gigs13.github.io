@@ -6,6 +6,7 @@ import Navbar from "./components/navbar";
 import Resumen from "./components/resumen";
 import Experiencias from "./components/experiencias";
 import Habilidades from "./components/habilidades";
+import Footer from "./components/footer";
 import data from "./data/data.json";
 import { Box, Divider } from "@mui/material";
 
@@ -32,6 +33,7 @@ function App() {
           <Divider variant="middle" />
           <Habilidades />
         </Box>
+        <Footer />
       </HelmetProvider>
     </UserContext.Provider>
   );
