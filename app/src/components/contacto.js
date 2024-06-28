@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import {
   Grid,
   TextField,
@@ -13,14 +13,6 @@ import { FormControl } from "@mui/base";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 
 const Contacto = () => {
-  const myForm = useRef(null);
-  useEffect(() => {
-    myForm.current.action = "https://formkeep.com/f/ea5bec0ac885";
-    myForm.current.method = "POST";
-    myForm.current.acceptCharset = "UTF-8";
-    myForm.current.enctype = "multipart/form-data";
-  });
-
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
@@ -32,6 +24,8 @@ const Contacto = () => {
     email: "",
     message: "",
   });
+
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -61,17 +55,38 @@ const Contacto = () => {
     return errors;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const errors = validate();
     if (Object.keys(errors).length === 0) {
-      alert(JSON.stringify(formValues, null, 2));
-      setFormValues({
-        name: "",
-        email: "",
-        message: "",
-      });
-      setFormErrors({});
+      try {
+        const formData = new URLSearchParams();
+        for (const key in formValues) {
+          formData.append(key, formValues[key]);
+        }
+        const response = await fetch("https://formkeep.com/f/ea5bec0ac885", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: formData.toString(),
+        });
+        if (response.ok) {
+          setSubmitSuccess(true);
+          setFormValues({
+            name: "",
+            email: "",
+            message: "",
+          });
+          setFormErrors({});
+        } else {
+          // Manejo de errores en caso de una respuesta no exitosa
+          setSubmitSuccess(false);
+        }
+      } catch (error) {
+        console.error("Error al enviar el formulario:", error); // Aqui estaría bien mostrarlo como no se envio, por alguna razon.
+        setSubmitSuccess(false);
+      }
     } else {
       setFormErrors(errors);
     }
@@ -86,7 +101,7 @@ const Contacto = () => {
         flexGrow: 1,
       }}
     >
-      <Box component="form" onSubmit={handleSubmit} ref={myForm}>
+      <Box component="form" onSubmit={handleSubmit}>
         <Grid
           container
           spacing={2}
