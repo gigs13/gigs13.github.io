@@ -15,12 +15,25 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
 import { ReactComponent as GithubSvg } from "../assets/logo/github-mark.svg";
 import SvgIcon from "@mui/material/SvgIcon";
+import Contacto from "./contacto";
 
 export default function Footer() {
   const user = useContext(UserContext);
   return (
-    <Grid container alignItems="center" justifyContent="center">
-      <Grid item xs={7} justifyContent="center">
+    <Grid
+      container
+      alignItems="center"
+      justifyContent="center"
+      spacing={2}
+      sx={{
+        backgroundColor: (theme) =>
+          theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+      }}
+    >
+      <Grid item sm={6}>
+        <Contacto />
+      </Grid>
+      <Grid item sm={3} justifyContent="center">
         <List>
           <ListItem>
             <ListItemIcon>
@@ -34,6 +47,16 @@ export default function Footer() {
             </ListItemIcon>
             <ListItemText>{user.mail}</ListItemText>
           </ListItemButton>
+          <ListItem>
+            <ListItemIcon>
+              <HomeRoundedIcon color="secondary" />
+            </ListItemIcon>
+            <ListItemText>{`${user.city}, ${user.country}`}</ListItemText>
+          </ListItem>
+        </List>
+      </Grid>
+      <Grid item sm={3}>
+        <List>
           <ListItemButton component="a" href={user.website}>
             <ListItemIcon>
               <LanguageRoundedIcon color="secondary" />
@@ -47,16 +70,6 @@ export default function Footer() {
               }}
             ></ListItemText>
           </ListItemButton>
-          <ListItem>
-            <ListItemIcon>
-              <HomeRoundedIcon color="secondary" />
-            </ListItemIcon>
-            <ListItemText>{`${user.city}, ${user.country}`}</ListItemText>
-          </ListItem>
-        </List>
-      </Grid>
-      <Grid item xs={5}>
-        <List>
           <ListItemButton component="a" href={user.linkedin.url}>
             <ListItemIcon>
               <WorkRoundedIcon color="secondary" />
