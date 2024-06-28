@@ -7,8 +7,9 @@ import Resumen from "./components/resumen";
 import Experiencias from "./components/experiencias";
 import Habilidades from "./components/habilidades";
 import Footer from "./components/footer";
+import Contacto from "./components/contacto";
 import data from "./data/data.json";
-import { Box, Divider } from "@mui/material";
+import { Divider } from "@mui/material";
 
 export const UserContext = React.createContext();
 
@@ -24,15 +25,12 @@ function App() {
           name={`${user.name}'s resume`}
           type="website"
         />
-
-        <Box sx={{ p: 1 }}>
-          <Navbar />
-          <Resumen />
-          <Divider variant="middle" />
-          <Experiencias />
-          <Divider variant="middle" />
-          <Habilidades />
-        </Box>
+        <Navbar />
+        <Resumen />
+        <Divider variant="middle" />
+        <Experiencias />
+        <Divider variant="middle" />
+        <Habilidades />
         <Footer />
       </HelmetProvider>
     </UserContext.Provider>

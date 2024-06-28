@@ -14,8 +14,9 @@ export default function Habilidades() {
       alignItems="center"
       spacing={2}
       sx={{
-        pl: 4,
-        pt: 4,
+        p: 6,
+        my: "auto",
+        flexGrow: 1,
       }}
     >
       <Grid item xs={6}>
