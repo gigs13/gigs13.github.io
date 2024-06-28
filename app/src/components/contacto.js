@@ -65,7 +65,6 @@ const Contacto = () => {
     event.preventDefault();
     const errors = validate();
     if (Object.keys(errors).length === 0) {
-      // Si entra, como le metemos el action?
       alert(JSON.stringify(formValues, null, 2));
       setFormValues({
         name: "",
@@ -80,6 +79,7 @@ const Contacto = () => {
 
   return (
     <Container
+      id="contact"
       sx={{
         p: 2,
         margin: "auto",
