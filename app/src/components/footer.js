@@ -19,7 +19,12 @@ export default function Footer() {
   const user = useContext(UserContext);
 
   const GithubIcon = createSvgIcon(
-    <svg width="98" height="96" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="98"
+      height="96"
+      viewBox="0 0 98 96"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
@@ -119,7 +124,7 @@ export default function Footer() {
           </ListItemButton>
           <ListItemButton component="a" href={user.github.url} target="_blank">
             <ListItemIcon>
-              <GithubIcon color="secondary" />
+              <GithubIcon color="secondary" fontSize="small" />
             </ListItemIcon>
             <ListItemText
               primary={user.github.user}
