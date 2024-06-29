@@ -3,12 +3,15 @@ import {
   Grid,
   TextField,
   Button,
+  IconButton,
   Container,
   Box,
   Typography,
+  Collapse,
   Stack,
   Alert,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import { FormControl } from "@mui/base";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 
@@ -26,6 +29,8 @@ const Contacto = () => {
   });
 
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+  const [attempts, setAttempts] = useState(0);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -45,7 +50,7 @@ const Contacto = () => {
     if (!formValues.email) {
       errors.email = "Your email is required";
     } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
-      errors.email = "Must be a valid email";
+      errors.email = "Must be a valid email address";
     }
 
     if (!formValues.message) {
@@ -73,6 +78,8 @@ const Contacto = () => {
         });
         if (response.ok) {
           setSubmitSuccess(true);
+          setSubmitError(false);
+          setAttempts(0);
           setFormValues({
             name: "",
             email: "",
@@ -80,15 +87,20 @@ const Contacto = () => {
           });
           setFormErrors({});
         } else {
-          // Manejo de errores en caso de una respuesta no exitosa
           setSubmitSuccess(false);
+          setSubmitError(true);
+          setAttempts(attempts + 1);
         }
       } catch (error) {
-        console.error("Error al enviar el formulario:", error); // Aqui estaría bien mostrarlo como no se envio, por alguna razon.
+        console.error("Error submitting the form:", error);
         setSubmitSuccess(false);
+        setSubmitError(true);
+        setAttempts(attempts + 1);
       }
     } else {
       setFormErrors(errors);
+      setSubmitError(true);
+      setAttempts(attempts + 1);
     }
   };
 
@@ -110,6 +122,54 @@ const Contacto = () => {
             justifyContent: "center",
           }}
         >
+          <Grid item xs={12}>
+            <Box color="success.main" sx={{ width: "100%" }}>
+              <Collapse in={submitSuccess}>
+                <Alert
+                  severity="success"
+                  action={
+                    <IconButton
+                      aria-label="close"
+                      color="inherit"
+                      size="small"
+                      onClick={() => {
+                        setSubmitSuccess(false);
+                      }}
+                    >
+                      <CloseIcon fontSize="inherit" />
+                    </IconButton>
+                  }
+                  sx={{ mb: 2 }}
+                >
+                  Your request has been submitted, I'll get in touch soon!
+                </Alert>
+              </Collapse>
+            </Box>
+            <Box color="error.main" sx={{ width: "100%" }}>
+              <Collapse in={submitError}>
+                <Alert
+                  severity="error"
+                  action={
+                    <IconButton
+                      aria-label="close"
+                      color="inherit"
+                      size="small"
+                      onClick={() => {
+                        setSubmitError(false);
+                      }}
+                    >
+                      <CloseIcon fontSize="inherit" />
+                    </IconButton>
+                  }
+                  sx={{ mb: 2 }}
+                >
+                  {attempts < 2
+                    ? "Your request has not been submitted, please check your input data before requesting again."
+                    : "If the error persists, please contact me through my social media."}
+                </Alert>
+              </Collapse>
+            </Box>
+          </Grid>
           <Grid item xs={12}>
             <Typography variant="h4" color="secondary">
               Get in touch
