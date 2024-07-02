@@ -28,7 +28,8 @@ export default function Resumen() {
       <Grid id="about" container spacing={2}>
         <Grid
           item
-          xs={3}
+          xs={12}
+          xl={3}
           justifyContent="center"
           alignItems="center"
           sx={{
@@ -48,7 +49,7 @@ export default function Resumen() {
             </Typography>
           </Stack>
         </Grid>
-        <Grid item xs={9} justifyContent="center" alignItems="center">
+        <Grid item xs={12} xl={9} justifyContent="center" alignItems="center">
           <Box
             my={4}
             display="flex"
@@ -69,7 +70,7 @@ export default function Resumen() {
             container
             justifyContent="center"
             alignItems="center"
-            sx={{ pt: 6 }}
+            sx={{ py: 6 }}
           >
             <Button
               variant="contained"

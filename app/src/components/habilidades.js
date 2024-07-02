@@ -19,7 +19,7 @@ export default function Habilidades() {
         flexGrow: 1,
       }}
     >
-      <Grid item xs={6}>
+      <Grid item xs={12} xl={6}>
         <Typography variant="h5" color="secondary">
           Skills that I've honed
         </Typography>
@@ -64,7 +64,7 @@ export default function Habilidades() {
           </Grid>
         ))}
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={12} xl={6}>
         <Typography variant="h5" color="secondary">
           Hobbies
         </Typography>
