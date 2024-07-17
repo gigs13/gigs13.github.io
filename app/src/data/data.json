@@ -76,7 +76,7 @@
               "title": "Santander Movil - New mobile app for Santander Bank end-users.",
               "description": [
                 "Agile facilitator at squad level, enabler of the productivity of the team that created the product.",
-                "Manager of the primary user website for the electronic banking platform.",
+                "Manager of the primary user app for the electronic banking platform.",
                 "Frontend developed in Typescript with Angular Framework. API developed in JAVA."
               ]
             }
@@ -175,7 +175,7 @@
           "projects": [
             {
               "id": 0,
-              "title": "<i>posibleplus.mx</i> & <i>posiblylynx.com</i> - Platforms tool for entrepreneurs",
+              "title": "posibleplus.mx & posiblylynx.com - Platforms tool for entrepreneurs",
               "description": [
                 "Posible Plus being a MOOC and Posible Lynx a site of job offers for entrepreneurs.",
                 "Both platforms were addressed with their two perspectives which involved the creation of a new development, and its marketing in the product target.",
@@ -202,7 +202,7 @@
           "projects": [
             {
               "id": 0,
-              "title": "Trainee Program - Enabled communication and data storage for <b>Ann Taylor</b> and <b>Walmart</b>.",
+              "title": "Trainee Program - Enabled communication and data storage for Ann Taylor and Walmart.",
               "description": [
                 "Worked in a four-person team, creating skills in Information Management, such as: Data analysis, DataBase backup and recovery. Data-Marts model creation and design, Database monitoring, Capacity planning, performance and database security. Thus providing better views of data analytics for management projects."
               ]

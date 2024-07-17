@@ -30,14 +30,14 @@ export default function Experiencias() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Grid item xs={2}>
+        <Grid item xs={12} xl={2}>
           <NavegacionExperiencia
             experiences={experiences}
             activeExperience={activeExperience}
             handleListItemClick={handleCLick}
           />
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={12} xl={10}>
           <List
             sx={{
               bgcolor: "background.paper",
