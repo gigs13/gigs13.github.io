@@ -3,7 +3,7 @@ import { Box, Stack, Grid, Avatar, Typography, Button } from "@mui/material";
 import DownloadForOfflineRoundedIcon from "@mui/icons-material/DownloadForOfflineRounded";
 import { UserContext } from "../App";
 import imagen from "../assets/resumePhoto.jpeg";
-import resume from "../assets/documents/Rodrigo's Resume.pdf";
+import resume from "../assets/documents/Rodrigo's resume proffesional.pdf";
 
 export default function Resumen() {
   const user = useContext(UserContext);
