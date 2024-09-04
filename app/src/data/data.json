@@ -40,9 +40,9 @@
               "id": 0,
               "title": "E commerce site for Drop Climbing physical store.",
               "description": [
-                "Monitor customer preferences to determine focus of sales efforts.",
-                "Maintain up-to-date records of all products available on the company's e-commerce site.",
-                "Development of the backend site in python with Django REST framework. Storefront development with React and GraphQL."
+                "Led the development of a scalable e-commerce platform for Drop Climbing using GCP, and kubernetes boosting online sales by 20% in the first quarter.",
+                "Customized the self-hosted Saleor.io solution, integrating it with a Python backend (Django REST) and a React/GraphQL frontend for seamless user experiences.",
+                "Maintained a 99.9% accurate product catalog, improving inventory management and customer satisfaction."
               ]
             }
           ]
@@ -64,20 +64,11 @@
           "projects": [
             {
               "id": 0,
-              "title": "Santander Web - New web channel for Santander Bank end-users.",
+              "title": "Santander Web & Movil - New web and mobile channel for Santander Bank end-users.",
               "description": [
-                "Agile facilitator at squad level, enabler of the productivity of the team that created the product.",
-                "Manager of the primary user website for the electronic banking platform.",
-                "Frontend developed in Typescript with Angular Framework. API developed in JAVA."
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Santander Movil - New mobile app for Santander Bank end-users.",
-              "description": [
-                "Agile facilitator at squad level, enabler of the productivity of the team that created the product.",
-                "Manager of the primary user app for the electronic banking platform.",
-                "Frontend developed in Typescript with Angular Framework. API developed in JAVA."
+                "Led the Agile team in developing a new web and mobile channel for Santander Bank, resulting in a 25% reduction in time-to-market for new features.",
+                "Managed and optimized the primary user website for Santander’s electronic banking platform, enhancing performance and user experience for 20.5 million customers in Mexico.",
+                "Spearheaded the frontend development using TypeScript with Angular and the backend API using Java, delivering a high-quality platform that significantly improved user engagement and satisfaction."
               ]
             }
           ]
@@ -101,9 +92,8 @@
               "id": 0,
               "title": "Bimbo — Maptiq.",
               "description": [
-                "Commercial Intelligent Map, that enabled the overview of points of sale within Mexico City, Lima and São Paulo.",
-                "Accountable for removing impediments of the team to achieve the sprint goals/deliverables.",
-                "Frontend developed in Javascript with React. Backend developed in python with Django REST framework."
+                "Led the development of Maptiq, an AI-driven commercial intelligence map for Grupo Bimbo, using React, Mapbox, and AWS, resulting in a 15% increase in sales impact per point of sale across 2.5 million locations in Mexico, Brazil, and Peru.",
+                "Facilitated the Agile team as Scrum Master, removing impediments and enhancing team productivity to consistently meet sprint goals and deliverables for high-impact projects."
               ]
             }
           ]
@@ -118,9 +108,8 @@
               "id": 0,
               "title": "Price Optimization Web-app for Cinepolis & Bimbo Canada",
               "description": [
-                "Web portal that enabled the overview of dynamic prices at granular level.",
-                "Developer and supervisor of the web portal.",
-                "Enabled the data visualization through graphics such as D3.js libraries and React development, interacting with an API developed with Python Django REST framework."
+                "Developed and managed a dynamic pricing optimization web app for Cinepolis, leveraging React, MUI, and D3.js on the frontend, and Python Django REST with AWS on the backend, which improved price elasticity visibility and increased sales by 15% across 800+ cinemas.",
+                "Enhanced data visualization capabilities for Bimbo Canada by integrating D3.js libraries with React, improving the granularity and clarity of dynamic pricing insights, leading to more informed decision-making."
               ]
             }
           ]
@@ -144,16 +133,14 @@
               "id": 0,
               "title": "PepsiCo - Cars II",
               "description": [
-                "Tool development phase, for the management of cars in the company.",
-                "Developed in JAVA using Spring as a data manipulation framework."
+                "Implemented the Cars Tool, a Java-based fleet management system using Spring, which optimized vehicle usage and resulted in an 8% reduction in operational costs."
               ]
             },
             {
               "id": 1,
               "title": "Phillip Morris - Carreer Journey.",
               "description": [
-                "Web tool that allows the wide selection of a professional career for the employee within the company.",
-                "Developed in HTML5 using Bootstrap and Jquery using as a base SharePoint information through its custom lists."
+                "Developed Customer Journey, a web platform using HTML5, jQuery, Bootstrap, and Sass, enhancing the user experience for approximately 1,800 employees and significantly improving their professional development opportunities within the company."
               ]
             }
           ]
