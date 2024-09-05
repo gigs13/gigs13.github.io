@@ -6,7 +6,6 @@ import { useContext, useState, createRef } from "react";
 
 export default function Experiencias() {
   const experiences = useContext(UserContext).experiences;
-
   const [activeExperience, setActiveExperience] = useState();
 
   const refs = experiences.reduce((refsObj, experience) => {
@@ -22,27 +21,29 @@ export default function Experiencias() {
   };
 
   return (
-    <Box id="experience" sx={{ p: 8 }}>
+    <Box id="experience" sx={{ p: { xs: 2, sm: 4, md: 8 } }}>
       <Grid
         container
         spacing={2}
         direction="row"
         justifyContent="space-between"
-        alignItems="center"
+        alignItems="flex-start"
       >
-        <Grid item xs={12} xl={2}>
+        <Grid item xs={12} sm={4} xl={2}>
           <NavegacionExperiencia
             experiences={experiences}
             activeExperience={activeExperience}
             handleListItemClick={handleCLick}
           />
         </Grid>
-        <Grid item xs={12} xl={10}>
+
+        <Grid item xs={12} sm={8} xl={10}>
           <List
             sx={{
               bgcolor: "background.paper",
               overflow: "auto",
               maxHeight: 850,
+              p: { xs: 1, sm: 2 },
             }}
             subheader={<li />}
           >

@@ -43,6 +43,8 @@
 }
 html, body {
   height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Evita desplazamiento horizontal */
 }
 body {
   font-family: 'Open Sans', sans-serif;
