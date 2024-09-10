@@ -44,11 +44,10 @@ Built with **React** and **MUI**, the project is responsive and works seamlessly
 Follow these steps to run the project locally:
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/gigs13/gigs13.github.io.git
    ```
-
-````
 
 2. **Install the dependencies**:
    ```bash
@@ -105,4 +104,3 @@ If you want to reach out or collaborate, feel free to contact me via the **conta
 ## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
-````
