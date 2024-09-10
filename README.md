@@ -14,7 +14,6 @@
 - [Features](#-features)
 - [Getting Started](#-getting-started)
 - [Sections](#-sections)
-- [Screenshots](#-screenshots)
 - [Contact](#-contact)
 - [License](#-license)
 
