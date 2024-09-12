@@ -1,6 +1,7 @@
 import { Box, Paper, Typography, Grid } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../App";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 export default function Habilidades() {
   const skills = useContext(UserContext).skills;
@@ -46,18 +47,20 @@ export default function Habilidades() {
 
 // Componente para la barra de progreso con efecto de animación
 function SkillProgress({ skill }) {
+  const [ref, isIntersecting] = useIntersectionObserver({
+    threshold: 0.2, // Cuando el 20% del elemento esté visible
+  });
   const [progress, setProgress] = useState(0); // Controlamos el progreso de la barra
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setProgress(skill.percentage); // Actualizamos el ancho de la barra después de montar el componente
-    }, 500); // Puedes ajustar el tiempo de espera para un efecto más natural
-
-    return () => clearTimeout(timeout); // Limpiamos el timeout al desmontar
-  }, [skill.percentage]);
+    if (isIntersecting) {
+      setProgress(skill.percentage); // Actualizamos el ancho de la barra cuando esté visible
+    }
+  }, [isIntersecting, skill.percentage]);
 
   return (
     <Grid
+      ref={ref} // Aplicamos el ref directamente al contenedor del componente
       container
       spacing={2}
       sx={{
@@ -88,7 +91,7 @@ function SkillProgress({ skill }) {
       </Grid>
       <Grid item>
         <Typography variant="body2" color="text.secondary">
-          {`${skill.percentage}%`}
+          {`${progress}%`}
         </Typography>
       </Grid>
     </Grid>
