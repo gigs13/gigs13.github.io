@@ -11,7 +11,6 @@ import {
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
 import { createSvgIcon } from "@mui/material/utils";
 import Contacto from "./contacto";
 

@@ -6,18 +6,23 @@ import { useContext, useState, createRef } from "react";
 
 export default function Experiencias() {
   const experiences = useContext(UserContext).experiences;
-  const [activeExperience, setActiveExperience] = useState();
+  const [activeExperience, setActiveExperience] = useState(null);
 
+  // Crear refs para cada experiencia basados en el shortName
   const refs = experiences.reduce((refsObj, experience) => {
     refsObj[experience.shortName] = createRef();
     return refsObj;
   }, {});
 
-  const handleCLick = (shortName) => {
-    refs[shortName].current.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
+  // Manejar el click en la navegación para hacer scroll a la experiencia
+  const handleClick = (shortName) => {
+    if (refs[shortName]?.current) {
+      refs[shortName].current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      setActiveExperience(shortName); // Actualizar la experiencia activa
+    }
   };
 
   return (
@@ -33,7 +38,7 @@ export default function Experiencias() {
           <NavegacionExperiencia
             experiences={experiences}
             activeExperience={activeExperience}
-            handleListItemClick={handleCLick}
+            handleListItemClick={handleClick}
           />
         </Grid>
 

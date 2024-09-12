@@ -7,7 +7,6 @@ import Resumen from "./components/resumen";
 import Experiencias from "./components/experiencias";
 import Habilidades from "./components/habilidades";
 import Footer from "./components/footer";
-import Contacto from "./components/contacto";
 import data from "./data/data.json";
 import { Divider } from "@mui/material";
 

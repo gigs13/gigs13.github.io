@@ -7,6 +7,7 @@ import {
   Grid,
 } from "@mui/material";
 import { useEffect } from "react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 export default function Experiencia({
   experience,
@@ -14,34 +15,37 @@ export default function Experiencia({
   setActiveExperience,
   refs,
 }) {
-  const activeClass =
-    activeExperience === experience.id ? "secondary" : "text.secondary";
+  const observerOptions = {
+    rootMargin: "-50% 33.3% -50% 0%",
+    threshold: 0,
+  };
 
+  // Usa el custom hook para observar el componente actual
+  const [ref, isIntersecting] = useIntersectionObserver(
+    observerOptions,
+    refs[experience.shortName]
+  );
+
+  // Actualiza el estado cuando el elemento esté visible
   useEffect(() => {
-    const observerConfig = {
-      rootMargin: "-50% 33.3% -50% 0%",
-      threshold: 0,
-    };
-    const handleIntersection = function (entries) {
-      entries.forEach((entry) => {
-        if (entry.target.id !== activeExperience && entry.isIntersecting) {
-          setActiveExperience(Number(entry.target.id));
-        }
-      });
-    };
-    const observer = new IntersectionObserver(
-      handleIntersection,
-      observerConfig
-    );
-    observer.observe(refs[experience.shortName].current);
+    if (isIntersecting && activeExperience !== experience.shortName) {
+      setActiveExperience(experience.shortName); // Cambiamos el estado activo basado en el shortName
+    }
+  }, [
+    isIntersecting,
+    activeExperience,
+    experience.shortName,
+    setActiveExperience,
+  ]);
 
-    return () => observer.disconnect(); // Cleanup the observer if component unmounts.
-  }, [activeExperience, setActiveExperience, experience, refs]);
+  // Aplicar la clase activa basado en el shortName
+  const activeClass =
+    activeExperience === experience.shortName ? "secondary" : "text.secondary";
 
   return (
     <>
       <ListSubheader>
-        <ListItem ref={refs[experience.shortName]} id={experience.id}>
+        <ListItem ref={refs[experience.shortName]} id={experience.shortName}>
           <ListItemIcon>{/* Icono del trabajo (si lo tienes) */}</ListItemIcon>
           <ListItemText>
             <Typography
@@ -62,8 +66,8 @@ export default function Experiencia({
       {experience.jobs.map((job) => (
         <Grid
           container
-          sx={{ flexGrow: 1, overflowX: "hidden", marginBottom: 2 }} // Añade un margen inferior entre cada trabajo
-          spacing={2} // Añade espacio entre elementos
+          sx={{ flexGrow: 1, overflowX: "hidden", marginBottom: 2 }}
+          spacing={2}
           key={job.id}
         >
           {/* Título del trabajo */}
@@ -72,8 +76,8 @@ export default function Experiencia({
               variant="h6"
               sx={{
                 fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
-                wordBreak: "break-word", // Rompe palabras largas
-                fontWeight: "bold", // Asegura que se destaque el título del trabajo
+                wordBreak: "break-word",
+                fontWeight: "bold",
               }}
             >
               {job.title}
@@ -81,8 +85,8 @@ export default function Experiencia({
             <Typography
               sx={{
                 fontSize: { xs: "0.85rem", sm: "1rem", md: "1.15rem" },
-                lineHeight: { xs: "1.3", sm: "1.6" }, // Espaciado entre líneas
-                wordBreak: "break-word", // Rompe palabras largas en la descripción
+                lineHeight: { xs: "1.3", sm: "1.6" },
+                wordBreak: "break-word",
                 color: "text.secondary",
               }}
             >
@@ -102,7 +106,7 @@ export default function Experiencia({
                     sx={{
                       fontWeight: "bold",
                       fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
-                      wordBreak: "break-word", // Asegura que el título no se desborde
+                      wordBreak: "break-word",
                     }}
                   >
                     {project.title}
@@ -112,10 +116,10 @@ export default function Experiencia({
                   <Typography
                     sx={{
                       fontSize: { xs: "0.85rem", sm: "1rem", md: "1.15rem" },
-                      lineHeight: { xs: "1.3", sm: "1.6" }, // Espaciado entre líneas
-                      wordBreak: "break-word", // Rompe palabras largas
+                      lineHeight: { xs: "1.3", sm: "1.6" },
+                      wordBreak: "break-word",
                       color: "text.secondary",
-                      whiteSpace: "normal", // Asegura que el texto no se mantenga en una sola línea
+                      whiteSpace: "normal",
                     }}
                   >
                     {project.description.map((description) => (
