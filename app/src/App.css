@@ -282,6 +282,9 @@ a {
   color: white;
   margin-bottom: 15px;
 }
+.experience-item {
+  scroll-margin-top: 100px; /* Ajusta el margen de scroll según necesites */
+}
 .section-padding {
   padding: 60px 60px 40px 40px;
 }
