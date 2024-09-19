@@ -16,8 +16,8 @@ export default function Experiencia({
   refs,
 }) {
   const observerOptions = {
-    rootMargin: "-50% 33.3% -50% 0%",
-    threshold: 0,
+    rootMargin: "0px",
+    threshold: 0.5,
   };
 
   // Usa el custom hook para observar el componente actual
@@ -26,19 +26,13 @@ export default function Experiencia({
     refs[experience.shortName]
   );
 
-  // Actualiza el estado cuando el elemento esté visible
+  // Actualiza el estado solo cuando el elemento esté visible y no esté ya activo
   useEffect(() => {
     if (isIntersecting && activeExperience !== experience.shortName) {
-      setActiveExperience(experience.shortName); // Cambiamos el estado activo basado en el shortName
+      setActiveExperience(experience.shortName);
     }
-  }, [
-    isIntersecting,
-    activeExperience,
-    experience.shortName,
-    setActiveExperience,
-  ]);
+  }, [isIntersecting, experience.shortName]); // Dependencias reducidas
 
-  // Aplicar la clase activa basado en el shortName
   const activeClass =
     activeExperience === experience.shortName ? "secondary" : "text.secondary";
 
@@ -54,7 +48,7 @@ export default function Experiencia({
               sx={{
                 fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" },
                 textAlign: { xs: "center", sm: "left" },
-                wordBreak: "break-word", // Previene que el texto se desborde en pantallas pequeñas
+                wordBreak: "break-word",
               }}
             >
               {experience.company}
@@ -70,7 +64,6 @@ export default function Experiencia({
           spacing={2}
           key={job.id}
         >
-          {/* Título del trabajo */}
           <Grid item xs={12}>
             <Typography
               variant="h6"
@@ -96,7 +89,6 @@ export default function Experiencia({
             </Typography>
           </Grid>
 
-          {/* Proyectos asociados al trabajo */}
           {job.projects.map((project) => (
             <Grid item xs={12} key={project.id}>
               <ListItemText
