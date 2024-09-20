@@ -32,9 +32,21 @@ export default function Experiencias() {
         spacing={2}
         direction="row"
         justifyContent="space-between"
-        alignItems="flex-start"
+        alignItems="center" // Cambiamos esto a center para alinear verticalmente
       >
-        <Grid item xs={12} sm={4} xl={2}>
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          xl={2}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center", // Centramos verticalmente
+            alignItems: "center", // Centramos horizontalmente
+            height: "100vh", // Hacemos que el Grid ocupe toda la pantalla
+          }}
+        >
           <NavegacionExperiencia
             experiences={experiences}
             activeExperience={activeExperience}
