@@ -16,8 +16,8 @@ export default function Experiencia({
   refs,
 }) {
   const observerOptions = {
-    rootMargin: "0px",
-    threshold: 0.5,
+    rootMargin: "-30% 0px -50% 0px",
+    threshold: 0,
   };
 
   // Usa el custom hook para observar el componente actual
