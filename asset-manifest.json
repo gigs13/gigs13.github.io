@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.47d219ef.css",
-    "main.js": "/static/js/main.fbbf7209.js",
+    "main.css": "/static/css/main.bc076c56.css",
+    "main.js": "/static/js/main.182eb605.js",
     "static/js/453.ace21015.chunk.js": "/static/js/453.ace21015.chunk.js",
-    "static/media/Rodrigo's Proffesional Resume.pdf": "/static/media/Rodrigo's Proffesional Resume.7c575c9eebe7e76e3089.pdf",
+    "static/media/Rodrigo's Proffesional Resume.pdf": "/static/media/Rodrigo's Proffesional Resume.13f15cbc83e0a4df317b.pdf",
     "static/media/resumePhoto.jpeg": "/static/media/resumePhoto.5935b5ca466fd91f91f6.jpeg",
     "static/media/montserrat-latin-400-normal.woff": "/static/media/montserrat-latin-400-normal.b48c3d9a8c0a49c1c7b4.woff",
     "static/media/montserrat-latin-ext-400-normal.woff": "/static/media/montserrat-latin-ext-400-normal.cf42d14e809c6fdc0929.woff",
@@ -17,12 +17,12 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/static/media/montserrat-vietnamese-400-normal.176348415471f3e062e6.woff2",
     "index.html": "/index.html",
     "static/media/favicon.ico": "/static/media/favicon.e72aab274856864eaee0.ico",
-    "main.47d219ef.css.map": "/static/css/main.47d219ef.css.map",
-    "main.fbbf7209.js.map": "/static/js/main.fbbf7209.js.map",
+    "main.bc076c56.css.map": "/static/css/main.bc076c56.css.map",
+    "main.182eb605.js.map": "/static/js/main.182eb605.js.map",
     "453.ace21015.chunk.js.map": "/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.47d219ef.css",
-    "static/js/main.fbbf7209.js"
+    "static/css/main.bc076c56.css",
+    "static/js/main.182eb605.js"
   ]
 }
