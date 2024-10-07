@@ -2,9 +2,9 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  ListSubheader,
   Typography,
   Grid,
+  Box,
 } from "@mui/material";
 import { useEffect } from "react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
@@ -20,7 +20,7 @@ export default function Experiencia({
     threshold: 0,
   };
 
-  // Usa el custom hook para observar el componente actual
+  // eslint-disable-next-line no-unused-vars
   const [ref, isIntersecting] = useIntersectionObserver(
     observerOptions,
     refs[experience.shortName]
@@ -31,20 +31,29 @@ export default function Experiencia({
     if (isIntersecting && activeExperience !== experience.shortName) {
       setActiveExperience(experience.shortName);
     }
-  }, [isIntersecting, experience.shortName]); // Dependencias reducidas
+    // eslint-disable-next-line
+  }, [isIntersecting, experience.shortName]);
 
   const activeClass =
     activeExperience === experience.shortName ? "secondary" : "text.secondary";
 
   return (
     <>
-      <ListSubheader>
-        <ListItem ref={refs[experience.shortName]} id={experience.shortName}>
+      <Box
+        component="div"
+        sx={{ backgroundColor: "background.paper", padding: "8px 16px" }}
+      >
+        <ListItem
+          ref={refs[experience.shortName]}
+          id={experience.shortName}
+          sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+        >
           <ListItemIcon>{/* Icono del trabajo (si lo tienes) */}</ListItemIcon>
           <ListItemText>
             <Typography
               variant="h4"
               color={activeClass}
+              component="span"
               sx={{
                 fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" },
                 textAlign: { xs: "center", sm: "left" },
@@ -55,7 +64,7 @@ export default function Experiencia({
             </Typography>
           </ListItemText>
         </ListItem>
-      </ListSubheader>
+      </Box>
 
       {experience.jobs.map((job) => (
         <Grid
@@ -67,6 +76,7 @@ export default function Experiencia({
           <Grid item xs={12}>
             <Typography
               variant="h6"
+              component="div"
               sx={{
                 fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
                 wordBreak: "break-word",
@@ -76,6 +86,7 @@ export default function Experiencia({
               {job.title}
             </Typography>
             <Typography
+              component="div"
               sx={{
                 fontSize: { xs: "0.85rem", sm: "1rem", md: "1.15rem" },
                 lineHeight: { xs: "1.3", sm: "1.6" },
@@ -95,6 +106,7 @@ export default function Experiencia({
                 primary={
                   <Typography
                     variant="h6"
+                    component="span"
                     sx={{
                       fontWeight: "bold",
                       fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
@@ -106,6 +118,7 @@ export default function Experiencia({
                 }
                 secondary={
                   <Typography
+                    component="span"
                     sx={{
                       fontSize: { xs: "0.85rem", sm: "1rem", md: "1.15rem" },
                       lineHeight: { xs: "1.3", sm: "1.6" },
@@ -115,7 +128,9 @@ export default function Experiencia({
                     }}
                   >
                     {project.description.map((description) => (
-                      <Typography key={description}>{description}</Typography>
+                      <Typography key={description} component="span">
+                        {description}
+                      </Typography>
                     ))}
                   </Typography>
                 }
