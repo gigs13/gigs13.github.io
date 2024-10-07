@@ -2,11 +2,15 @@ import NavegacionExperiencia from "./navegacionExperiencias";
 import Experiencia from "./experiencia";
 import { UserContext } from "../App";
 import { Box, Grid, List } from "@mui/material";
-import { useContext, useState, createRef } from "react";
+import { useContext, useState, createRef, useCallback } from "react";
 
 export default function Experiencias() {
   const experiences = useContext(UserContext).experiences;
-  const [activeExperience, setActiveExperience] = useState(null);
+  const [activeExperience, setActiveExperienceState] = useState(null);
+
+  const setActiveExperience = useCallback((experience) => {
+    setActiveExperienceState(experience);
+  }, []);
 
   // Crear refs para cada experiencia basados en el shortName
   const refs = experiences.reduce((refsObj, experience) => {
