@@ -36,7 +36,6 @@ function HideOnScroll({ children, window }) {
 }
 
 function Navbar({ window }) {
-  // Ya estamos utilizando el contexto, así que no necesitamos props
   const { experiences } = useContext(UserContext); // Accedemos al contexto
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -47,9 +46,15 @@ function Navbar({ window }) {
   };
 
   const handleListItemClick = (shortName) => {
-    // Lógica para seleccionar una experiencia activa
-    const experience = experiences.find((exp) => exp.shortName === shortName);
-    setActiveExperience(experience);
+    // Lógica para seleccionar una experiencia activa y hacer scroll
+    const experienceElement = document.getElementById(shortName);
+    if (experienceElement) {
+      experienceElement.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+    setActiveExperience(shortName); // Actualiza la experiencia activa
   };
 
   const drawer = (
@@ -77,7 +82,7 @@ function Navbar({ window }) {
       <NavegacionExperiencia
         experiences={experiences} // Pasamos las experiencias del contexto
         activeExperience={activeExperience}
-        handleListItemClick={handleListItemClick}
+        handleListItemClick={handleListItemClick} // Actualizamos para usar esta función
       />
     </Box>
   );
