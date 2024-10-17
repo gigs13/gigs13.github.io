@@ -12,12 +12,12 @@ export default function NavegacionExperiencia({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100%",
       }}
     >
       {experiences.map((experience) => (
-        <ListItem key={experience.shortName} id={experience.shortName}>
+        <ListItem key={experience.shortName} id={`nav-${experience.shortName}`}>
           <ListItemButton
+            disableRipple
             selected={activeExperience === experience.shortName}
             onClick={() => handleListItemClick(experience.shortName)}
             sx={{

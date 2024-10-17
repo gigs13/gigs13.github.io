@@ -2,7 +2,7 @@ import NavegacionExperiencia from "./navegacionExperiencias";
 import Experiencia from "./experiencia";
 import { UserContext } from "../App";
 import { Box, Grid, List } from "@mui/material";
-import { useContext, useState, createRef, useCallback } from "react";
+import { useContext, useState, useCallback } from "react";
 
 export default function Experiencias() {
   const experiences = useContext(UserContext).experiences;
@@ -12,20 +12,21 @@ export default function Experiencias() {
     setActiveExperienceState(experience);
   }, []);
 
-  // Crear refs para cada experiencia basados en el shortName
-  const refs = experiences.reduce((refsObj, experience) => {
-    refsObj[experience.shortName] = createRef();
-    return refsObj;
-  }, {});
-
-  // Manejar el click en la navegación para hacer scroll a la experiencia
+  // Manejamos el click en la navegación para hacer scroll a la experiencia
   const handleClick = (shortName) => {
-    if (refs[shortName]?.current) {
-      refs[shortName].current.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-      setActiveExperience(shortName); // Actualizar la experiencia activa
+    const experienceElement = document.getElementById(shortName);
+
+    if (experienceElement) {
+      // Agregar un setTimeout para controlar el comportamiento del scroll
+      setTimeout(() => {
+        experienceElement.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+
+        // Después del scroll, actualizamos la experiencia activa
+        setActiveExperience(shortName);
+      }, 300); // Ajusta el retraso a tus necesidades
     }
   };
 
@@ -36,7 +37,7 @@ export default function Experiencias() {
         spacing={2}
         direction="row"
         justifyContent="space-between"
-        alignItems="center" // Cambiamos esto a center para alinear verticalmente
+        alignItems="center"
       >
         <Grid
           item
@@ -48,7 +49,6 @@ export default function Experiencias() {
             flexDirection: "column",
             justifyContent: "center", // Centramos verticalmente
             alignItems: "center", // Centramos horizontalmente
-            height: "100vh", // Hacemos que el Grid ocupe toda la pantalla
           }}
         >
           <NavegacionExperiencia
@@ -63,7 +63,7 @@ export default function Experiencias() {
             sx={{
               bgcolor: "background.paper",
               overflow: "auto",
-              maxHeight: 850,
+              maxHeight: 450,
               p: { xs: 1, sm: 2 },
             }}
             subheader={<li />}
@@ -74,7 +74,6 @@ export default function Experiencias() {
                 experience={experience}
                 activeExperience={activeExperience}
                 setActiveExperience={setActiveExperience}
-                refs={refs}
               />
             ))}
           </List>
