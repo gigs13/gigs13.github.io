@@ -1,14 +1,14 @@
 import {
-  ListItem,
   ListItemIcon,
   ListItemText,
   Typography,
   Grid,
-  Box,
   Card,
   CardContent,
   CardHeader,
   Divider,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
 
@@ -20,13 +20,20 @@ export default function Experiencia({
   const activeClass =
     activeExperience === experience.shortName ? "secondary" : "text.secondary";
 
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
+  const amount = isMobile ? 0.2 : isTablet ? 0.5 : 0.8;
+
   return (
     <motion.div
       id={experience.shortName}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      viewport={{ once: false, amount: 0.5 }}
+      viewport={{ once: false, amount }}
       onViewportEnter={() => setActiveExperience(experience.shortName)}
     >
       <Card
@@ -38,7 +45,6 @@ export default function Experiencia({
           padding: 2,
         }}
       >
-        {/* Titulo de la compañía */}
         <CardHeader
           avatar={<ListItemIcon>{/* Icono del trabajo */}</ListItemIcon>}
           title={
@@ -76,7 +82,6 @@ export default function Experiencia({
               key={job.id}
             >
               <Grid item xs={12}>
-                {/* Título de la posición */}
                 <ListItemText
                   primary={
                     <Typography
@@ -92,7 +97,6 @@ export default function Experiencia({
                     </Typography>
                   }
                 />
-                {/* Fechas del trabajo */}
                 <ListItemText
                   secondary={
                     <Typography
@@ -112,12 +116,10 @@ export default function Experiencia({
                 />
               </Grid>
 
-              {/* Divider para mayor claridad entre secciones */}
               <Divider sx={{ marginY: 2 }} />
 
               {job.projects.map((project) => (
                 <Grid item xs={12} key={project.id}>
-                  {/* Título del proyecto */}
                   <ListItemText
                     primary={
                       <Typography
@@ -125,7 +127,7 @@ export default function Experiencia({
                         component="span"
                         sx={{
                           fontWeight: "bold",
-                          fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" }, // Más pequeño que el título de la posición
+                          fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" },
                           wordBreak: "break-word",
                         }}
                       >
@@ -133,7 +135,6 @@ export default function Experiencia({
                       </Typography>
                     }
                   />
-                  {/* Descripción del proyecto */}
                   <ListItemText
                     secondary={
                       <Typography
