@@ -25,7 +25,7 @@ export default function Experiencia({
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
-  const amount = isMobile ? 0.2 : isTablet ? 0.5 : 0.8;
+  const amount = isMobile ? 0.2 : isTablet ? 0.4 : 0.6;
 
   return (
     <motion.div
