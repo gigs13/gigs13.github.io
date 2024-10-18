@@ -1,7 +1,7 @@
-import { Box, Paper, Typography, Grid } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
+import { Paper, Typography, Grid, useTheme } from "@mui/material";
+import { useContext } from "react";
 import { UserContext } from "../App";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { motion } from "framer-motion";
 
 export default function Habilidades() {
   const skills = useContext(UserContext).skills;
@@ -47,20 +47,10 @@ export default function Habilidades() {
 
 // Componente para la barra de progreso con efecto de animación
 function SkillProgress({ skill }) {
-  const [ref, isIntersecting] = useIntersectionObserver({
-    threshold: 0.2, // Cuando el 20% del elemento esté visible
-  });
-  const [progress, setProgress] = useState(0); // Controlamos el progreso de la barra
-
-  useEffect(() => {
-    if (isIntersecting) {
-      setProgress(skill.percentage); // Actualizamos el ancho de la barra cuando esté visible
-    }
-  }, [isIntersecting, skill.percentage]);
+  const theme = useTheme();
 
   return (
     <Grid
-      ref={ref} // Aplicamos el ref directamente al contenedor del componente
       container
       spacing={2}
       sx={{
@@ -76,22 +66,21 @@ function SkillProgress({ skill }) {
           sx={{ width: 300, height: 10, borderRadius: 0, overflow: "hidden" }}
           elevation={1}
         >
-          <Box
-            sx={{
-              width: `${progress}%`,
-              height: 10,
-              bgcolor: "primary.main",
-              transition: "width 2s ease-in-out", // Transición suave
-              "&:hover": {
-                bgcolor: "primary.dark",
-              },
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: 0 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            whileInView={{ width: `${skill.percentage}%` }}
+            style={{
+              height: "100%",
+              backgroundColor: theme.palette.primary.main,
             }}
           />
         </Paper>
       </Grid>
       <Grid item>
         <Typography variant="body2" color="text.secondary">
-          {`${progress}%`}
+          {`${skill.percentage}%`}
         </Typography>
       </Grid>
     </Grid>
