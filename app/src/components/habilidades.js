@@ -1,5 +1,5 @@
 import { Paper, Typography, Grid, useTheme } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../App";
 import { motion } from "framer-motion";
 
@@ -48,6 +48,8 @@ export default function Habilidades() {
 // Componente para la barra de progreso con efecto de animación
 function SkillProgress({ skill }) {
   const theme = useTheme();
+  const [displayedPercentage, setDisplayedPercentage] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   return (
     <Grid
@@ -68,7 +70,6 @@ function SkillProgress({ skill }) {
         >
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: 0 }}
             transition={{ duration: 2, ease: "easeInOut" }}
             whileInView={{ width: `${skill.percentage}%` }}
             style={{
@@ -79,9 +80,33 @@ function SkillProgress({ skill }) {
         </Paper>
       </Grid>
       <Grid item>
-        <Typography variant="body2" color="text.secondary">
-          {`${skill.percentage}%`}
-        </Typography>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
+          onViewportEnter={() => {
+            if (!hasAnimated) {
+              const incrementPercentage = (percentage) => {
+                let count = 0;
+                const interval = setInterval(() => {
+                  if (count < percentage) {
+                    count++;
+                    setDisplayedPercentage(count);
+                  } else {
+                    clearInterval(interval); // Limpiamos el intervalo cuando se alcanza el porcentaje
+                  }
+                }, 35);
+              };
+
+              incrementPercentage(skill.percentage);
+              setHasAnimated(true);
+            }
+          }}
+        >
+          <Typography variant="body2" color="text.secondary">
+            {`${displayedPercentage}%`} {/* Muestra el porcentaje animado */}
+          </Typography>
+        </motion.div>
       </Grid>
     </Grid>
   );
