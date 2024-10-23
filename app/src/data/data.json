@@ -22,6 +22,317 @@
     "user": "rodrigo_sanchezisunza",
     "url": "https://www.polywork.com/rodrigo_sanchezisunza"
   },
+  "projects": [
+    {
+      "id": 0,
+      "show": true,
+      "title": "Bimbo — Maptiq.",
+      "description": [
+        "Led the development of Maptiq, an AI-driven commercial intelligence map for Grupo Bimbo."
+      ],
+      "key-responsabilities": [
+        "Facilitated the Agile team as Scrum Master, removing impediments and enhancing team productivity to consistently meet sprint goals and deliverables for high-impact projects."
+      ],
+      "impact": [
+        "Resulting in a 15% increase in sales impact per point of sale across 2.5 million locations in Mexico, Brazil, and Peru."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "backend",
+          "language": "python",
+          "frameworks": ["django"]
+        },
+        {
+          "id": 1,
+          "category": "frontend",
+          "language": "javascript",
+          "frameworks": ["react", "mapbox"]
+        },
+        {
+          "id": 2,
+          "category": "devops",
+          "language": "aws",
+          "frameworks": []
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "show": true,
+      "title": "Logger de Asensos — Django",
+      "description": [
+        "Developed a logger system for recording ascensions in rock climbing using Django for data handling."
+      ],
+      "key-responsabilities": [
+        "Designed and implemented a robust backend using Django to store and manage users' ascension logs."
+      ],
+      "impact": [
+        "Improved data accessibility and provided climbers with detailed progress tracking."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "backend",
+          "language": "python",
+          "frameworks": ["django"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "show": true,
+      "title": "KUO — Autopartes Recommendation Tool",
+      "description": [
+        "Developed a recommendation tool for auto parts using machine learning models provided by KUO's data science team."
+      ],
+      "key-responsabilities": [
+        "Led the full-stack development, integrating a Django API for backend services and React for the frontend."
+      ],
+      "impact": [
+        "Enhanced the client’s ability to make data-driven decisions in the auto parts business."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "backend",
+          "language": "python",
+          "frameworks": ["django"]
+        },
+        {
+          "id": 1,
+          "category": "frontend",
+          "language": "javascript",
+          "frameworks": ["react"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "show": true,
+      "title": "Cinepolis — POW.",
+      "description": [
+        "Developed a pricing elasticity platform to optimize ticket pricing strategies across 800+ cinema complexes."
+      ],
+      "key-responsabilities": [
+        "Architected and built the frontend with React and integrated real-time data analytics using ElasticSearch."
+      ],
+      "impact": [
+        "Achieved a 15% increase in overall sales by dynamically adjusting prices based on demand."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "frontend",
+          "language": "javascript",
+          "frameworks": ["react"]
+        },
+        {
+          "id": 1,
+          "category": "backend",
+          "language": "node.js",
+          "frameworks": ["elasticSearch"]
+        },
+        {
+          "id": 2,
+          "category": "devops",
+          "language": "aws",
+          "frameworks": []
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "show": true,
+      "title": "Santander — Web Platform",
+      "description": [
+        "Contributed to the development of Santander Web, a banking platform serving over 20 million users in Mexico."
+      ],
+      "key-responsabilities": [
+        "Led the frontend development with React, focusing on improving the user experience and platform performance."
+      ],
+      "impact": [
+        "Boosted user engagement by 20% through performance optimization and user interface enhancements."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "backend",
+          "language": "java",
+          "frameworks": ["spring", "spring boot"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "show": true,
+      "title": "Phillip Morris — Career Journey.",
+      "description": [
+        "Developed a professional growth platform to enhance the career development process for Phillip Morris employees."
+      ],
+      "key-responsabilities": [
+        "Led the backend development with Node.js, integrating several APIs and services to streamline the user experience."
+      ],
+      "impact": [
+        "Improved user satisfaction and productivity for over 1,800 employees globally."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "frontend",
+          "language": "javascript",
+          "frameworks": []
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "show": true,
+      "title": "PepsiCo — Car Tools II.",
+      "description": [
+        "Led the development of a vehicle fleet management tool for PepsiCo, aimed at reducing operational costs."
+      ],
+      "key-responsabilities": [
+        "Designed and implemented the backend using Java Spring Boot and integrated vehicle tracking functionalities."
+      ],
+      "impact": [
+        "Reduced fleet management costs by 8% by optimizing vehicle maintenance and tracking."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "backend",
+          "language": "java",
+          "frameworks": ["spring boot"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "show": false,
+      "title": "Drop Climbing — Landing Page.",
+      "description": [
+        "Developed the landing page for Drop Climbing, a platform aimed at enhancing the rock climbing community."
+      ],
+      "key-responsabilities": [
+        "Implemented the full-stack solution using React and Node.js, integrating payment and booking systems."
+      ],
+      "impact": [
+        "Increased user engagement by improving UI/UX and providing streamlined booking capabilities."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "frontend",
+          "language": "typescript",
+          "frameworks": ["next.js"]
+        },
+        {
+          "id": 0,
+          "category": "backend",
+          "language": "python",
+          "frameworks": ["django"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": "https://dropclimbing.com"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "show": false,
+      "title": "Pasha — E commerce.",
+      "description": [
+        "Developed the landing page for Pasha Climbing, an indoor climbing facility, focusing on modern UI/UX."
+      ],
+      "key-responsabilities": [
+        "Led the frontend development using React and integrated booking services to streamline customer experience."
+      ],
+      "impact": [
+        "Enhanced customer acquisition and online presence through a user-friendly design."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "frontend",
+          "language": "typescript",
+          "frameworks": ["next.js"]
+        },
+        {
+          "id": 0,
+          "category": "backend",
+          "language": "python",
+          "frameworks": ["django"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": "https://pashasclimbing.com"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "show": false,
+      "title": "Pau — Nin pagina de costura tienda de e commerce",
+      "description": [""],
+      "key-responsabilities": [""],
+      "impact": [""],
+      "tech-stack": [{}],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    }
+  ],
   "experiences": [
     {
       "id": 0,
