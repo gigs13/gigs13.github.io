@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   AppBar,
   Box,
@@ -17,13 +17,13 @@ import {
   useScrollTrigger,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import NavegacionExperiencia from "./navegacionExperiencias";
+import { UserContext } from "../App"; // Importamos el contexto
 
 const drawerWidth = 240;
 const navItems = ["About", "Experience", "Skills", "Contact"];
 
-function HideOnScroll(props) {
-  const { children, window } = props;
-
+function HideOnScroll({ children, window }) {
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
   });
@@ -35,12 +35,26 @@ function HideOnScroll(props) {
   );
 }
 
-function Navbar(props) {
-  const { window } = props;
+function Navbar({ window }) {
+  const { experiences } = useContext(UserContext); // Accedemos al contexto
+
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeExperience, setActiveExperience] = useState(null);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const handleListItemClick = (shortName) => {
+    // Lógica para seleccionar una experiencia activa y hacer scroll
+    const experienceElement = document.getElementById(shortName);
+    if (experienceElement) {
+      experienceElement.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+    setActiveExperience(shortName); // Actualiza la experiencia activa
   };
 
   const drawer = (
@@ -51,7 +65,7 @@ function Navbar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <a key={item} href={`#${item.toLocaleLowerCase()}`}>
+          <a key={item} href={`#${item.toLowerCase()}`}>
             <ListItem key={item} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText primary={item} />
@@ -60,6 +74,16 @@ function Navbar(props) {
           </a>
         ))}
       </List>
+      <Divider />
+      {/* Navegación de experiencias */}
+      <Typography variant="h6" sx={{ mt: 2 }}>
+        Experiencias
+      </Typography>
+      <NavegacionExperiencia
+        experiences={experiences} // Pasamos las experiencias del contexto
+        activeExperience={activeExperience}
+        handleListItemClick={handleListItemClick} // Actualizamos para usar esta función
+      />
     </Box>
   );
 
@@ -69,7 +93,7 @@ function Navbar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <HideOnScroll {...props}>
+      <HideOnScroll window={window}>
         <AppBar component="nav" color="primary">
           <Toolbar>
             <IconButton
@@ -90,11 +114,11 @@ function Navbar(props) {
                 display: { xs: "none", sm: "block" },
               }}
             >
-              Rodrigo's resume
+              Rodrigo's Resume
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
-                <a key={item} href={`#${item.toLocaleLowerCase()}`}>
+                <a key={item} href={`#${item.toLowerCase()}`}>
                   <Button key={item} sx={{ color: "#fff" }}>
                     {item}
                   </Button>
@@ -111,7 +135,7 @@ function Navbar(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, // Mejor rendimiento en móviles
           }}
           sx={{
             display: { xs: "block", sm: "none" },

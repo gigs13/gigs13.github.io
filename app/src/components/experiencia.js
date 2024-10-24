@@ -1,81 +1,166 @@
 import {
-  ListItem,
   ListItemIcon,
   ListItemText,
-  ListSubheader,
   Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardHeader,
+  Divider,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Experiencia({
   experience,
   activeExperience,
   setActiveExperience,
-  refs,
 }) {
   const activeClass =
-    activeExperience === experience.id ? "secondary" : "text.secondary";
-  useEffect(() => {
-    const observerConfig = {
-      rootMargin: "-50% 33.3% -50% 0%",
-      threshold: 0,
-    };
-    const handleIntersection = function (entries) {
-      entries.forEach((entry) => {
-        if (entry.target.id !== activeExperience && entry.isIntersecting) {
-          setActiveExperience(Number(entry.target.id));
-        }
-      });
-    };
-    const observer = new IntersectionObserver(
-      handleIntersection,
-      observerConfig
-    );
-    observer.observe(refs[experience.shortName].current);
+    activeExperience === experience.shortName ? "secondary" : "text.secondary";
 
-    return () => observer.disconnect(); // Clenaup the observer if component unmount.
-  }, [activeExperience, setActiveExperience, experience, refs]);
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
+  const amount = isMobile ? 0.2 : isTablet ? 0.4 : 0.6;
 
   return (
-    <>
-      <ListSubheader>
-        <ListItem ref={refs[experience.shortName]} id={experience.id}>
-          <ListItemIcon>{/* {experience.icon} */}</ListItemIcon>
-          <ListItemText>
-            <Typography variant="h4" color={activeClass}>
+    <motion.div
+      id={experience.shortName}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: false, amount }}
+      onViewportEnter={() => setActiveExperience(experience.shortName)}
+    >
+      <Card
+        sx={{
+          backgroundColor: "background.paper",
+          marginBottom: 3,
+          borderRadius: 2,
+          boxShadow: 3,
+          padding: 2,
+        }}
+      >
+        <CardHeader
+          avatar={<ListItemIcon>{/* Icono del trabajo */}</ListItemIcon>}
+          title={
+            <Typography
+              variant="h4"
+              color={activeClass}
+              component="span"
+              sx={{
+                fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" },
+                textAlign: { xs: "center", sm: "left" },
+                wordBreak: "break-word",
+              }}
+            >
               {experience.company}
             </Typography>
-          </ListItemText>
-        </ListItem>
-      </ListSubheader>
-      {experience.jobs.map((job) => (
-        <ListItem key={`job-${job.id}`}>
-          <ListItemText
-            primary={job.title}
-            secondary={`${job["start-date"]} - ${
-              !experience.active ? job["end-date"] : "Current"
-            }`}
-          />
-          {job.projects.map((project) => (
-            <ListItemText
-              key={project.id}
-              primary={`${project.title}`}
-              secondary={
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="body2"
-                  color="text.secondary"
-                >
-                  {project.description.map((description) => (
-                    <ListItemText key={description}>{description}</ListItemText>
-                  ))}
-                </Typography>
-              }
-            />
+          }
+        />
+
+        <CardContent>
+          {experience.jobs.map((job, index) => (
+            <Grid
+              container
+              sx={{
+                flexGrow: 1,
+                overflowX: "hidden",
+                marginBottom: 2,
+                borderBottom:
+                  experience.jobs.length > 1 &&
+                  index !== experience.jobs.length - 1
+                    ? "1px solid rgba(255,255,255,0.12)"
+                    : "none",
+                paddingBottom: 2,
+              }}
+              spacing={2}
+              key={job.id}
+            >
+              <Grid item xs={12}>
+                <ListItemText
+                  primary={
+                    <Typography
+                      variant="h6"
+                      component="div"
+                      sx={{
+                        fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+                        wordBreak: "break-word",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {job.title}
+                    </Typography>
+                  }
+                />
+                <ListItemText
+                  secondary={
+                    <Typography
+                      component="div"
+                      sx={{
+                        fontSize: { xs: "0.85rem", sm: "1rem", md: "1.15rem" },
+                        lineHeight: { xs: "1.3", sm: "1.6" },
+                        wordBreak: "break-word",
+                        color: "text.secondary",
+                      }}
+                    >
+                      {`${job["start-date"]} - ${
+                        !experience.active ? job["end-date"] : "Current"
+                      }`}
+                    </Typography>
+                  }
+                />
+              </Grid>
+
+              <Divider sx={{ marginY: 2 }} />
+
+              {job.projects.map((project) => (
+                <Grid item xs={12} key={project.id}>
+                  <ListItemText
+                    primary={
+                      <Typography
+                        variant="subtitle1"
+                        component="span"
+                        sx={{
+                          fontWeight: "bold",
+                          fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" },
+                          wordBreak: "break-word",
+                        }}
+                      >
+                        {project.title}
+                      </Typography>
+                    }
+                  />
+                  <ListItemText
+                    secondary={
+                      <Typography
+                        component="span"
+                        sx={{
+                          fontSize: { xs: "0.75rem", sm: "0.9rem", md: "1rem" },
+                          lineHeight: { xs: "1.3", sm: "1.6" },
+                          wordBreak: "break-word",
+                          color: "text.secondary",
+                          whiteSpace: "normal",
+                        }}
+                      >
+                        {project.description.map((description) => (
+                          <Typography key={description} component="span">
+                            {description}
+                          </Typography>
+                        ))}
+                      </Typography>
+                    }
+                  />
+                </Grid>
+              ))}
+            </Grid>
           ))}
-        </ListItem>
-      ))}
-    </>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }

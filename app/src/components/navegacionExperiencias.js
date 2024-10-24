@@ -6,12 +6,23 @@ export default function NavegacionExperiencia({
   handleListItemClick,
 }) {
   return (
-    <List>
+    <List
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       {experiences.map((experience) => (
-        <ListItem key={experience.shortName} id={experience.shortName}>
+        <ListItem key={experience.shortName} id={`nav-${experience.shortName}`}>
           <ListItemButton
-            selected={activeExperience === experience.id ? true : false}
+            disableRipple
+            selected={activeExperience === experience.shortName}
             onClick={() => handleListItemClick(experience.shortName)}
+            sx={{
+              textAlign: "center",
+            }}
           >
             <ListItemText primary={experience.shortName} />
           </ListItemButton>

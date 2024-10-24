@@ -1,28 +1,32 @@
 import NavegacionExperiencia from "./navegacionExperiencias";
 import Experiencia from "./experiencia";
 import { UserContext } from "../App";
-import { Box, Grid, List } from "@mui/material";
-import { useContext, useState, createRef } from "react";
+import { Box, Grid, List, useMediaQuery } from "@mui/material";
+import { useContext, useState, useCallback } from "react";
 
 export default function Experiencias() {
   const experiences = useContext(UserContext).experiences;
+  const [activeExperience, setActiveExperienceState] = useState(null);
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
-  const [activeExperience, setActiveExperience] = useState();
+  const setActiveExperience = useCallback((experience) => {
+    setActiveExperienceState(experience);
+  }, []);
 
-  const refs = experiences.reduce((refsObj, experience) => {
-    refsObj[experience.shortName] = createRef();
-    return refsObj;
-  }, {});
-
-  const handleCLick = (shortName) => {
-    refs[shortName].current.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
+  // Manejamos el click en la navegación para hacer scroll a la experiencia
+  const handleClick = (shortName) => {
+    const experienceElement = document.getElementById(shortName);
+    if (experienceElement) {
+      experienceElement.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      setActiveExperience(shortName);
+    }
   };
 
   return (
-    <Box id="experience" sx={{ p: 8 }}>
+    <Box id="experience" sx={{ p: { xs: 2, sm: 4, md: 8 } }}>
       <Grid
         container
         spacing={2}
@@ -30,19 +34,35 @@ export default function Experiencias() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Grid item xs={12} xl={2}>
-          <NavegacionExperiencia
-            experiences={experiences}
-            activeExperience={activeExperience}
-            handleListItemClick={handleCLick}
-          />
-        </Grid>
-        <Grid item xs={12} xl={10}>
+        {!isMobile && (
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            xl={2}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100vh",
+            }}
+          >
+            <NavegacionExperiencia
+              experiences={experiences}
+              activeExperience={activeExperience}
+              handleListItemClick={handleClick}
+            />
+          </Grid>
+        )}
+
+        <Grid item xs={12} sm={isMobile ? 12 : 8} xl={10}>
           <List
             sx={{
               bgcolor: "background.paper",
               overflow: "auto",
               maxHeight: 850,
+              p: { xs: 1, sm: 2 },
             }}
             subheader={<li />}
           >
@@ -52,7 +72,6 @@ export default function Experiencias() {
                 experience={experience}
                 activeExperience={activeExperience}
                 setActiveExperience={setActiveExperience}
-                refs={refs}
               />
             ))}
           </List>
