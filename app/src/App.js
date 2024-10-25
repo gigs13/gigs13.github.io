@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import SEO from "./components/seo";
 import Navbar from "./components/navbar";
 import Resumen from "./components/resumen";
+import Proyectos from "./components/listadoProyectos";
 import Experiencias from "./components/listadoExperiencias";
 import Habilidades from "./components/habilidades";
 import Footer from "./components/footer";
@@ -28,6 +29,8 @@ function App() {
         <Resumen />
         <Divider variant="middle" />
         <Experiencias />
+        <Divider variant="middle" />
+        <Proyectos />
         <Divider variant="middle" />
         <Habilidades />
         <Footer />
