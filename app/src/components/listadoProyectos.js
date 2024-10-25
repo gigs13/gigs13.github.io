@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { Grid, Button } from "@mui/material";
-import { motion } from "framer-motion";
 import Proyecto from "./proyecto";
 import { UserContext } from "../App";
+import { Grid } from "@mui/material";
 import { useContext } from "react";
+import { motion } from "framer-motion";
 
 export default function Proyectos() {
   const projects = useContext(UserContext).projects;
