@@ -426,3 +426,6 @@ a {
     width: 70%;
   }
 }
+li {
+  list-style: none;
+}
