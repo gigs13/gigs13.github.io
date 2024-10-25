@@ -7,9 +7,14 @@ import {
   Typography,
   Tooltip,
 } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { motion } from "framer-motion";
 
 export default function Proyecto({ project }) {
+  const githubLink = project.links.find((link) => link["github-repository"]);
+  const demoLink = project.links.find((link) => link.url);
+
   return (
     <motion.div
       layout
@@ -17,8 +22,8 @@ export default function Proyecto({ project }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.3 }}
-      whileHover={{ scale: 1.05 }} // Efecto hover
-      whileTap={{ scale: 1.1 }} // Efecto tap para agrandar temporalmente
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 1.1 }}
     >
       <Card
         elevation={3}
@@ -61,14 +66,23 @@ export default function Proyecto({ project }) {
           <Button
             variant="contained"
             size="small"
-            onClick={() => console.log("GitHub clicked")}
+            color="secondary"
+            startIcon={<GitHubIcon />}
+            disabled={!githubLink}
+            onClick={() =>
+              githubLink &&
+              window.open(githubLink["github-repository"], "_blank")
+            }
           >
             GitHub
           </Button>
           <Button
             variant="contained"
             size="small"
-            onClick={() => console.log("Demo clicked")}
+            color="secondary"
+            startIcon={<OpenInNewIcon />}
+            disabled={!demoLink}
+            onClick={() => demoLink && window.open(demoLink.url, "_blank")}
           >
             Demo
           </Button>
