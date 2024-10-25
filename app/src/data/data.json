@@ -65,7 +65,7 @@
     },
     {
       "id": 1,
-      "show": true,
+      "show": false,
       "title": "Logger de Asensos — Django",
       "description": [
         "Developed a logger system for recording ascensions in rock climbing using Django for data handling."
@@ -184,12 +184,18 @@
           "category": "backend",
           "language": "java",
           "frameworks": ["spring", "spring boot"]
+        },
+        {
+          "id": 1,
+          "category": "frontend",
+          "language": "typescrip",
+          "frameworks": ["angular"]
         }
       ],
       "links": [
         {
           "github-repository": "",
-          "url": ""
+          "url": "https://santanderweb.santander.com.mx"
         }
       ]
     },
