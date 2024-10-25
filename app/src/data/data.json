@@ -292,12 +292,12 @@
     {
       "id": 8,
       "show": false,
-      "title": "Pasha — E commerce.",
+      "title": "Pasha's Climbing — E commerce.",
       "description": [
-        "Developed the landing page for Pasha Climbing, an indoor climbing facility, focusing on modern UI/UX."
+        "Developed the landing page for Pasha's Climbing, a climbing brand of outdoor and indoor climbing products."
       ],
       "key-responsabilities": [
-        "Led the frontend development using React and integrated booking services to streamline customer experience."
+        "Led the frontend development using Next.js and saleor integrating online selling services to streamline customer experience."
       ],
       "impact": [
         "Enhanced customer acquisition and online presence through a user-friendly design."
