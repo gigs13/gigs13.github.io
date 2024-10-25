@@ -6,6 +6,7 @@ import {
   Button,
   Typography,
   Tooltip,
+  Chip,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -39,21 +40,16 @@ export default function Proyecto({ project }) {
               {project.title}
             </Typography>
           }
-          subheader={
-            // Tooltip para cada tecnología
-            project["tech-stack"].map((tech) => (
-              <Tooltip title={tech.category} key={tech.id}>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  component="span"
-                  sx={{ mr: 1 }} // Espaciado entre cada tecnología
-                >
-                  {tech.language}
-                </Typography>
-              </Tooltip>
-            ))
-          }
+          subheader={project["tech-stack"].map((tech) => (
+            <Tooltip title={tech.category} key={tech.id} arrow>
+              <Chip
+                label={tech.language}
+                color="secondary"
+                variant="outlined"
+                sx={{ mr: 1, mb: 1 }}
+              />
+            </Tooltip>
+          ))}
         />
 
         <CardContent>
