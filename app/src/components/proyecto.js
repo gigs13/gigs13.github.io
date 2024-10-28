@@ -7,6 +7,7 @@ import {
   Typography,
   Tooltip,
   Chip,
+  IconButton,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -59,29 +60,31 @@ export default function Proyecto({ project }) {
         </CardContent>
 
         <CardActions>
-          <Button
-            variant="contained"
-            size="small"
-            color="secondary"
-            startIcon={<GitHubIcon />}
-            disabled={!githubLink}
-            onClick={() =>
-              githubLink &&
-              window.open(githubLink["github-repository"], "_blank")
-            }
-          >
-            GitHub
-          </Button>
-          <Button
-            variant="contained"
-            size="small"
-            color="secondary"
-            startIcon={<OpenInNewIcon />}
-            disabled={!demoLink}
-            onClick={() => demoLink && window.open(demoLink.url, "_blank")}
-          >
-            Demo
-          </Button>
+          <Tooltip title="GitHub" arrow>
+            <IconButton
+              color="secondary"
+              disabled={!githubLink}
+              onClick={() =>
+                githubLink &&
+                window.open(githubLink["github-repository"], "_blank")
+              }
+            >
+              <GitHubIcon />
+            </IconButton>
+          </Tooltip>
+
+          <Tooltip title="Demo" arrow>
+            <Button
+              variant="contained"
+              size="small"
+              color="secondary"
+              startIcon={<OpenInNewIcon />}
+              disabled={!demoLink}
+              onClick={() => demoLink && window.open(demoLink.url, "_blank")}
+            >
+              Demo
+            </Button>
+          </Tooltip>
         </CardActions>
       </Card>
     </motion.div>
