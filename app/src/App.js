@@ -28,11 +28,12 @@ function App() {
         <Navbar />
         <Resumen />
         <Divider variant="middle" />
-        <Experiencias />
+        <Habilidades />
         <Divider variant="middle" />
         <Proyectos />
         <Divider variant="middle" />
-        <Habilidades />
+        <Experiencias />
+        <Divider variant="middle" />
         <Footer />
       </HelmetProvider>
     </UserContext.Provider>
