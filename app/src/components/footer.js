@@ -97,29 +97,10 @@ export default function Footer() {
             </ListItemIcon>
             <ListItemText>{user.mail}</ListItemText>
           </ListItemButton>
-          <ListItem>
-            <ListItemIcon>
-              <HomeRoundedIcon color="secondary" />
-            </ListItemIcon>
-            <ListItemText>{`${user.city}, ${user.country}`}</ListItemText>
-          </ListItem>
         </List>
       </Grid>
       <Grid item xs={12} xl={3}>
         <List>
-          <ListItemButton component="a" href={user.website} target="_blank">
-            <ListItemIcon>
-              <LanguageRoundedIcon color="secondary" />
-            </ListItemIcon>
-            <ListItemText
-              primary={user.website}
-              primaryTypographyProps={{
-                color: "secondary",
-                fontWeight: "medium",
-                variant: "body2",
-              }}
-            ></ListItemText>
-          </ListItemButton>
           <ListItemButton
             component="a"
             href={user.linkedin.url}
