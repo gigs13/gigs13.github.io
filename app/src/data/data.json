@@ -30,24 +30,30 @@
       "description": [
         "Developed the landing page for Drop Climbing, a platform aimed at enhancing the rock climbing community."
       ],
-      "key-responsabilities": [
-        "Implemented the full-stack solution using React and Node.js, integrating payment and booking systems."
-      ],
-      "impact": [
-        "Increased user engagement by improving UI/UX and providing streamlined booking capabilities."
-      ],
       "tech-stack": [
         {
           "id": 0,
-          "category": "frontend",
-          "language": "typescript",
+          "category": "Frontend",
+          "language": "Typescript",
           "frameworks": ["next.js"]
         },
         {
           "id": 0,
-          "category": "backend",
-          "language": "python",
+          "category": "Backend",
+          "language": "Python",
           "frameworks": ["django"]
+        },
+        {
+          "id": 2,
+          "category": "Databases",
+          "language": "PostgreSQL",
+          "frameworks": []
+        },
+        {
+          "id": 2,
+          "category": "Cloud",
+          "language": "aws",
+          "frameworks": ["S3", "Lambda"]
         }
       ],
       "links": [
@@ -65,7 +71,7 @@
         "Developed a logger system for recording ascensions in rock climbing using Django for data handling."
       ],
       "key-responsabilities": [
-        "Designed and implemented a robust backend using Django to store and manage users' ascension logs."
+        "Designed and implemented a robust Backend using Django to store and manage users' ascension logs."
       ],
       "impact": [
         "Improved data accessibility and provided climbers with detailed progress tracking."
@@ -73,8 +79,8 @@
       "tech-stack": [
         {
           "id": 0,
-          "category": "backend",
-          "language": "python",
+          "category": "Backend",
+          "language": "Python",
           "frameworks": ["django"]
         }
       ],
@@ -93,7 +99,7 @@
         "Developed the landing page for Pasha's Climbing, a climbing brand of outdoor and indoor climbing products."
       ],
       "key-responsabilities": [
-        "Led the frontend development using Next.js and saleor integrating online selling services to streamline customer experience."
+        "Led the Frontend development using Next.js and saleor integrating online selling services to streamline customer experience."
       ],
       "impact": [
         "Enhanced customer acquisition and online presence through a user-friendly design."
@@ -101,14 +107,14 @@
       "tech-stack": [
         {
           "id": 0,
-          "category": "frontend",
-          "language": "typescript",
+          "category": "Frontend",
+          "language": "Typescript",
           "frameworks": ["next.js"]
         },
         {
           "id": 0,
-          "category": "backend",
-          "language": "python",
+          "category": "Backend",
+          "language": "Python",
           "frameworks": ["django"]
         }
       ],
@@ -145,15 +151,21 @@
       "tech-stack": [
         {
           "id": 0,
-          "category": "backend",
-          "language": "java",
+          "category": "Backend",
+          "language": "Java",
           "frameworks": ["spring", "spring boot"]
         },
         {
           "id": 1,
-          "category": "frontend",
-          "language": "typescript",
+          "category": "Frontend",
+          "language": "Typescript",
           "frameworks": ["angular"]
+        },
+        {
+          "id": 2,
+          "category": "Databases",
+          "language": "PostgreSQL",
+          "frameworks": ["cassandra"]
         }
       ],
       "links": [
@@ -175,15 +187,27 @@
       "tech-stack": [
         {
           "id": 0,
-          "category": "backend",
-          "language": "python",
+          "category": "Backend",
+          "language": "Python",
           "frameworks": ["django"]
         },
         {
           "id": 1,
-          "category": "frontend",
-          "language": "javascript",
+          "category": "Frontend",
+          "language": "Javascript",
           "frameworks": ["react"]
+        },
+        {
+          "id": 2,
+          "category": "Databases",
+          "language": "PostgreSQL",
+          "frameworks": ["AWS Aurora"]
+        },
+        {
+          "id": 3,
+          "category": "Cloud",
+          "language": "AWS",
+          "frameworks": ["S3", "Lambda"]
         }
       ],
       "links": [
@@ -204,21 +228,27 @@
       "tech-stack": [
         {
           "id": 0,
-          "category": "backend",
-          "language": "python",
+          "category": "Backend",
+          "language": "Python",
           "frameworks": ["django"]
         },
         {
           "id": 1,
-          "category": "frontend",
-          "language": "javascript",
+          "category": "Frontend",
+          "language": "Javascript",
           "frameworks": ["react", "mapbox"]
         },
         {
           "id": 2,
-          "category": "devops",
-          "language": "aws",
+          "category": "Databases",
+          "language": "PostgreSQL",
           "frameworks": []
+        },
+        {
+          "id": 3,
+          "category": "Cloud",
+          "language": "AWS",
+          "frameworks": ["S3", "Lambda"]
         }
       ],
       "links": [
@@ -240,21 +270,27 @@
       "tech-stack": [
         {
           "id": 0,
-          "category": "frontend",
-          "language": "javascript",
+          "category": "Frontend",
+          "language": "Javascript",
           "frameworks": ["react"]
         },
         {
           "id": 1,
-          "category": "backend",
-          "language": "node.js",
-          "frameworks": ["elasticSearch"]
+          "category": "Backend",
+          "language": "Node.js",
+          "frameworks": ["express"]
         },
         {
           "id": 2,
-          "category": "devops",
-          "language": "aws",
+          "category": "Databases",
+          "language": "PostgreSQL",
           "frameworks": []
+        },
+        {
+          "id": 3,
+          "category": "Cloud",
+          "language": "AWS",
+          "frameworks": ["S3", "Lambda", "elasticSearch"]
         }
       ],
       "links": [
@@ -275,8 +311,8 @@
       "tech-stack": [
         {
           "id": 0,
-          "category": "frontend",
-          "language": "javascript",
+          "category": "Frontend",
+          "language": "Javascript",
           "frameworks": []
         }
       ],
@@ -298,8 +334,8 @@
       "tech-stack": [
         {
           "id": 0,
-          "category": "backend",
-          "language": "java",
+          "category": "Backend",
+          "language": "Java",
           "frameworks": ["spring boot"]
         }
       ],
@@ -330,7 +366,7 @@
               "title": "E commerce site for Drop Climbing physical store.",
               "description": [
                 "Led the development of a scalable e-commerce platform for Drop Climbing using GCP, and kubernetes boosting online sales by 20% in the first quarter.",
-                "Customized the self-hosted Saleor.io solution, integrating it with a Python backend (Django REST) and a React/GraphQL frontend for seamless user experiences.",
+                "Customized the self-hosted Saleor.io solution, integrating it with a Python Backend (Django REST) and a React/GraphQL Frontend for seamless user experiences.",
                 "Maintained a 99.9% accurate product catalog, improving inventory management and customer satisfaction."
               ]
             }
@@ -357,7 +393,7 @@
               "description": [
                 "Led the Agile team in developing a new web and mobile channel for Santander Bank, resulting in a 25% reduction in time-to-market for new features.",
                 "Managed and optimized the primary user website for Santander’s electronic banking platform, enhancing performance and user experience for 20.5 million customers in Mexico.",
-                "Spearheaded the frontend development using TypeScript with Angular and the backend API using Java, delivering a high-quality platform that significantly improved user engagement and satisfaction."
+                "Spearheaded the Frontend development using TypeScript with Angular and the Backend API using Java, delivering a high-quality platform that significantly improved user engagement and satisfaction."
               ]
             }
           ]
@@ -397,7 +433,7 @@
               "id": 0,
               "title": "Price Optimization Web-app for Cinepolis & Bimbo Canada",
               "description": [
-                "Developed and managed a dynamic pricing optimization web app for Cinepolis, leveraging React, MUI, and D3.js on the frontend, and Python Django REST with AWS on the backend, which improved price elasticity visibility and increased sales by 15% across 800+ cinemas.",
+                "Developed and managed a dynamic pricing optimization web app for Cinepolis, leveraging React, MUI, and D3.js on the Frontend, and Python Django REST with AWS on the Backend, which improved price elasticity visibility and increased sales by 15% across 800+ cinemas.",
                 "Enhanced data visualization capabilities for Bimbo Canada by integrating D3.js libraries with React, improving the granularity and clarity of dynamic pricing insights, leading to more informed decision-making."
               ]
             }
@@ -480,7 +516,7 @@
               "id": 0,
               "title": "Trainee Program - Enabled communication and data storage for Ann Taylor and Walmart.",
               "description": [
-                "Worked in a four-person team, creating skills in Information Management, such as: Data analysis, DataBase backup and recovery. Data-Marts model creation and design, Database monitoring, Capacity planning, performance and database security. Thus providing better views of data analytics for management projects."
+                "Worked in a four-person team, creating skills in Information Management, such as: Data analysis, DataBase backup and recovery. Data-Marts model creation and design, Database monitoring, Capacity planning, performance and Databases security. Thus providing better views of data analytics for management projects."
               ]
             }
           ]
@@ -570,19 +606,19 @@
   "skills": [
     {
       "id": 0,
-      "category": "frontend",
+      "category": "Frontend",
       "name": "Javascript / NodeJS / React / Angular",
       "percentage": 85
     },
     {
       "id": 1,
-      "category": "backend",
+      "category": "Backend",
       "name": "Python / Django",
       "percentage": 80
     },
     {
       "id": 2,
-      "category": "databases",
+      "category": "Databasess",
       "name": "MySQL / PostgreSQL / MongoDB / Redis",
       "percentage": 70
     },
