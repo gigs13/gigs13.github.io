@@ -33,7 +33,7 @@ export default function Habilidades() {
       {/* Sección de Educación */}
       <Grid item xs={12} xl={6}>
         <Typography variant="h5" color="secondary">
-          Education
+          Academical Education
         </Typography>
         {education.map((entry) => (
           <Grid item key={entry.school}>
