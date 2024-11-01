@@ -71,31 +71,27 @@ export default function Proyecto({ project }) {
         </CardContent>
 
         <CardActions>
-          <Tooltip title="GitHub" arrow>
-            <IconButton
-              color="secondary"
-              disabled={!githubLink}
-              onClick={() =>
-                githubLink &&
-                window.open(githubLink["github-repository"], "_blank")
-              }
-            >
-              <GitHubIcon />
-            </IconButton>
-          </Tooltip>
+          <IconButton
+            color="secondary"
+            disabled={!githubLink}
+            onClick={() =>
+              githubLink &&
+              window.open(githubLink["github-repository"], "_blank")
+            }
+          >
+            <GitHubIcon />
+          </IconButton>
 
-          <Tooltip title="Demo" arrow>
-            <Button
-              variant="contained"
-              size="small"
-              color="secondary"
-              startIcon={<OpenInNewIcon />}
-              disabled={!demoLink}
-              onClick={() => demoLink && window.open(demoLink.url, "_blank")}
-            >
-              Demo
-            </Button>
-          </Tooltip>
+          <Button
+            variant="contained"
+            size="small"
+            color="secondary"
+            startIcon={<OpenInNewIcon />}
+            disabled={!demoLink}
+            onClick={() => demoLink && window.open(demoLink.url, "_blank")}
+          >
+            Demo
+          </Button>
         </CardActions>
       </Card>
     </motion.div>
