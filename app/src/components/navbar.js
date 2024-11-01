@@ -21,7 +21,7 @@ import NavegacionExperiencia from "./navegacionExperiencias";
 import { UserContext } from "../App"; // Importamos el contexto
 
 const drawerWidth = 240;
-const navItems = ["About", "Experience", "Skills", "Contact"];
+const navItems = ["About", "Skills", "Projects", "Experience", "Contact"];
 
 function HideOnScroll({ children, window }) {
   const trigger = useScrollTrigger({

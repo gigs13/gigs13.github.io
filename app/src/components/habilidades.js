@@ -69,6 +69,7 @@ function SkillProgress({ skill }) {
 
   return (
     <Grid
+      id="skills"
       container
       spacing={2}
       alignItems="center"

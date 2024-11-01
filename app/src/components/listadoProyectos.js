@@ -11,6 +11,7 @@ export default function Proyectos() {
 
   return (
     <Grid
+      id="projects"
       container
       spacing={2}
       direction="row"
