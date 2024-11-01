@@ -10,7 +10,12 @@ export default function Proyectos() {
   );
 
   return (
-    <Grid container spacing={2} justifyContent="space-between">
+    <Grid
+      container
+      spacing={3}
+      justifyContent="space-between"
+      sx={{ flexGrow: 1, my: 3, py: 2 }}
+    >
       {projects.map((project) => (
         <Grid item xs={12} sm={6} md={4} key={project.id}>
           <motion.div
