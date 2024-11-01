@@ -3,14 +3,11 @@ import { UserContext } from "../App";
 import {
   Grid,
   List,
-  ListItem,
   ListItemButton,
   ListItemText,
   ListItemIcon,
 } from "@mui/material";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
-import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import { createSvgIcon } from "@mui/material/utils";
 import Contacto from "./contacto";
 
