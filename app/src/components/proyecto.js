@@ -33,30 +33,41 @@ export default function Proyecto({ project }) {
           maxWidth: 500,
           margin: "auto",
           transition: "0.3s",
+          padding: 1,
         }}
       >
         <CardHeader
           title={
-            <Typography variant="h4" color={"text.secondary"}>
+            <Typography variant="h5" color={"text.secondary"}>
               {project.title}
             </Typography>
           }
           subheader={project["tech-stack"].map((tech) => (
-            <Tooltip title={tech.category} key={tech.id} arrow>
+            <Tooltip
+              title={`${tech.category} ${
+                tech.frameworks.length > 0
+                  ? `- Frameworks: ${tech.frameworks.join(", ")}`
+                  : ""
+              }`}
+              key={`${project.id}-${tech.category}`}
+              arrow
+            >
               <Chip
                 label={tech.language}
                 color="secondary"
                 variant="outlined"
-                sx={{ mr: 1, mb: 1 }}
+                sx={{ mr: 1 }}
               />
             </Tooltip>
           ))}
         />
 
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            {project.description}
-          </Typography>
+          {project.description.map((desc, index) => (
+            <Typography variant="body2" color="text.secondary" key={index}>
+              {desc}
+            </Typography>
+          ))}
         </CardContent>
 
         <CardActions>
