@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Habilidades() {
   const skills = useContext(UserContext).skills;
-  const hobbies = useContext(UserContext).hobbies;
+  const education = useContext(UserContext).education;
 
   return (
     <Grid
@@ -30,14 +30,18 @@ export default function Habilidades() {
         ))}
       </Grid>
 
-      {/* Sección de Hobbies */}
+      {/* Sección de Educación */}
       <Grid item xs={12} xl={6}>
         <Typography variant="h5" color="secondary">
-          Hobbies
+          Education
         </Typography>
-        {hobbies.map((hobby) => (
-          <Grid item key={hobby.name}>
-            <Typography>{hobby.description}</Typography>
+        {education.map((entry) => (
+          <Grid item key={entry.school}>
+            <Typography variant="h6">{entry.degree}</Typography>
+            <Typography color="textSecondary">
+              {entry.school} • {entry.year}
+            </Typography>
+            <Typography>{entry.description}</Typography>
           </Grid>
         ))}
       </Grid>

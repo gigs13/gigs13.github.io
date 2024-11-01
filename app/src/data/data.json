@@ -603,6 +603,17 @@
       ]
     }
   ],
+  "education": [
+    {
+      "id": 0,
+      "school": "La Salle University",
+      "degree": "Cybernetics and Computer Engineering",
+      "year": "2011 - 2015",
+      "description": [
+        "Specialized in creating dynamic web solutions, blending software engineering with the latest in data science and AI technologies."
+      ]
+    }
+  ],
   "skills": [
     {
       "id": 0,
