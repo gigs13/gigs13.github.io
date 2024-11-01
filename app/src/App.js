@@ -4,7 +4,8 @@ import { HelmetProvider } from "react-helmet-async";
 import SEO from "./components/seo";
 import Navbar from "./components/navbar";
 import Resumen from "./components/resumen";
-import Experiencias from "./components/experiencias";
+import Proyectos from "./components/listadoProyectos";
+import Experiencias from "./components/listadoExperiencias";
 import Habilidades from "./components/habilidades";
 import Footer from "./components/footer";
 import data from "./data/data.json";
@@ -27,9 +28,12 @@ function App() {
         <Navbar />
         <Resumen />
         <Divider variant="middle" />
+        <Habilidades />
+        <Divider variant="middle" />
+        <Proyectos />
+        <Divider variant="middle" />
         <Experiencias />
         <Divider variant="middle" />
-        <Habilidades />
         <Footer />
       </HelmetProvider>
     </UserContext.Provider>

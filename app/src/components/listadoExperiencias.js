@@ -1,7 +1,7 @@
 import NavegacionExperiencia from "./navegacionExperiencias";
 import Experiencia from "./experiencia";
 import { UserContext } from "../App";
-import { Box, Grid, List, useMediaQuery } from "@mui/material";
+import { Box, Grid, List, Typography, useMediaQuery } from "@mui/material";
 import { useContext, useState, useCallback } from "react";
 
 export default function Experiencias() {
@@ -34,6 +34,14 @@ export default function Experiencias() {
         justifyContent="space-between"
         alignItems="center"
       >
+        <Grid item xs={12}>
+          <Box sx={{ flexGrow: 1 }}>
+            <Typography variant="h4" color="secondary">
+              My professional journey
+            </Typography>
+          </Box>
+        </Grid>
+
         {!isMobile && (
           <Grid
             item

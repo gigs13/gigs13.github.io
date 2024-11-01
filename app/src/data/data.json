@@ -22,6 +22,331 @@
     "user": "rodrigo_sanchezisunza",
     "url": "https://www.polywork.com/rodrigo_sanchezisunza"
   },
+  "projects": [
+    {
+      "id": 0,
+      "show": false,
+      "title": "Drop Climbing — Landing Page.",
+      "description": [
+        "Developed the landing page for Drop Climbing, a platform aimed at enhancing the rock climbing community."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "Frontend",
+          "language": "Typescript",
+          "frameworks": ["next.js"]
+        },
+        {
+          "id": 0,
+          "category": "Backend",
+          "language": "Python",
+          "frameworks": ["django"]
+        },
+        {
+          "id": 2,
+          "category": "Databases",
+          "language": "PostgreSQL",
+          "frameworks": []
+        },
+        {
+          "id": 2,
+          "category": "Cloud",
+          "language": "aws",
+          "frameworks": ["S3", "Lambda"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": "https://dropclimbing.com"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "show": false,
+      "title": "Logger de Asensos — Django",
+      "description": [
+        "Developed a logger system for recording ascensions in rock climbing using Django for data handling."
+      ],
+      "key-responsabilities": [
+        "Designed and implemented a robust Backend using Django to store and manage users' ascension logs."
+      ],
+      "impact": [
+        "Improved data accessibility and provided climbers with detailed progress tracking."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "Backend",
+          "language": "Python",
+          "frameworks": ["django"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "show": false,
+      "title": "Pasha's Climbing — E commerce.",
+      "description": [
+        "Developed the landing page for Pasha's Climbing, a climbing brand of outdoor and indoor climbing products."
+      ],
+      "key-responsabilities": [
+        "Led the Frontend development using Next.js and saleor integrating online selling services to streamline customer experience."
+      ],
+      "impact": [
+        "Enhanced customer acquisition and online presence through a user-friendly design."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "Frontend",
+          "language": "Typescript",
+          "frameworks": ["next.js"]
+        },
+        {
+          "id": 0,
+          "category": "Backend",
+          "language": "Python",
+          "frameworks": ["django"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": "https://pashasclimbing.com"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "show": false,
+      "title": "Pau — Nin pagina de costura tienda de e commerce",
+      "description": [""],
+      "key-responsabilities": [""],
+      "impact": [""],
+      "tech-stack": [{}],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "show": true,
+      "title": "Santander — Web Platform",
+      "description": [
+        "Santander Web is a robust electronic banking platform designed to enhance performance and user experience for 20.5 million customers in Mexico. ",
+        "With optimized architecture and improved processes, it provides a fast, secure, and scalable system that enables seamless access to banking services across all devices."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "Backend",
+          "language": "Java",
+          "frameworks": ["spring", "spring boot"]
+        },
+        {
+          "id": 1,
+          "category": "Frontend",
+          "language": "Typescript",
+          "frameworks": ["angular"]
+        },
+        {
+          "id": 2,
+          "category": "Databases",
+          "language": "PostgreSQL",
+          "frameworks": ["cassandra"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": "https://santanderweb.santander.com.mx"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "show": true,
+      "title": "KUO — Autopartes Recommendation Tool",
+      "description": [
+        "The Kuo Autoparts Recommendation Tool is a smart web system designed to streamline and personalize the autoparts selection process. ",
+        "Using data-driven recommendations, it guides users to optimal parts for their needs, enhancing accuracy and reducing search time. ",
+        "This solution provides an efficient and user-friendly experience, supporting Kuo’s goal of delivering precision in automotive part selection."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "Backend",
+          "language": "Python",
+          "frameworks": ["django"]
+        },
+        {
+          "id": 1,
+          "category": "Frontend",
+          "language": "Javascript",
+          "frameworks": ["react"]
+        },
+        {
+          "id": 2,
+          "category": "Databases",
+          "language": "PostgreSQL",
+          "frameworks": ["AWS Aurora"]
+        },
+        {
+          "id": 3,
+          "category": "Cloud",
+          "language": "AWS",
+          "frameworks": ["S3", "Lambda"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "show": true,
+      "title": "Bimbo — Maptiq.",
+      "description": [
+        "Maptiq is an AI-powered mapping platform developed for Grupo Bimbo, designed to analyze and enhance sales strategies across 2.5 million points of sale in Mexico, Brazil, and Peru. ",
+        "Built with React and Mapbox and powered by insights from data scientists, Maptiq provides sales teams with optimized portfolio suggestions, achieving a 15% increase in sales impact per location."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "Backend",
+          "language": "Python",
+          "frameworks": ["django"]
+        },
+        {
+          "id": 1,
+          "category": "Frontend",
+          "language": "Javascript",
+          "frameworks": ["react", "mapbox"]
+        },
+        {
+          "id": 2,
+          "category": "Databases",
+          "language": "PostgreSQL",
+          "frameworks": []
+        },
+        {
+          "id": 3,
+          "category": "Cloud",
+          "language": "AWS",
+          "frameworks": ["S3", "Lambda"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "show": true,
+      "title": "Cinepolis — POW.",
+      "description": [
+        "PoW is a web platform developed for Cinepolis to visualize price elasticity across over 800 cinema locations. ",
+        "Built with React, MUI, and D3.js, the platform enables data-driven pricing decisions, leading to a 15% increase in sales impact. ",
+        "The project integrates insights from data scientists to help optimize pricing strategies effectively."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "Frontend",
+          "language": "Javascript",
+          "frameworks": ["react"]
+        },
+        {
+          "id": 1,
+          "category": "Backend",
+          "language": "Node.js",
+          "frameworks": ["express"]
+        },
+        {
+          "id": 2,
+          "category": "Databases",
+          "language": "PostgreSQL",
+          "frameworks": []
+        },
+        {
+          "id": 3,
+          "category": "Cloud",
+          "language": "AWS",
+          "frameworks": ["S3", "Lambda", "elasticSearch"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "show": true,
+      "title": "Phillip Morris — Career Journey.",
+      "description": [
+        "Career Journey is a professional development platform created for Philip Morris employees, designed to enhance user experience and support growth for approximately 1,800 team members. ",
+        "Built with HTML5, jQuery, Bootstrap, and Sass, the platform offers a streamlined interface to facilitate skill-building and career progression."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "Frontend",
+          "language": "Javascript",
+          "frameworks": []
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "show": true,
+      "title": "PepsiCo — Car Tools II.",
+      "description": [
+        "Car Tools II is a Java-based fleet management system developed for PepsiCo, designed to optimize vehicle usage and reduce operational costs. ",
+        "By enhancing tracking and efficiency, the tool achieved an 8% reduction in fleet management expenses."
+      ],
+      "tech-stack": [
+        {
+          "id": 0,
+          "category": "Backend",
+          "language": "Java",
+          "frameworks": ["spring boot"]
+        }
+      ],
+      "links": [
+        {
+          "github-repository": "",
+          "url": ""
+        }
+      ]
+    }
+  ],
   "experiences": [
     {
       "id": 0,
@@ -41,7 +366,7 @@
               "title": "E commerce site for Drop Climbing physical store.",
               "description": [
                 "Led the development of a scalable e-commerce platform for Drop Climbing using GCP, and kubernetes boosting online sales by 20% in the first quarter.",
-                "Customized the self-hosted Saleor.io solution, integrating it with a Python backend (Django REST) and a React/GraphQL frontend for seamless user experiences.",
+                "Customized the self-hosted Saleor.io solution, integrating it with a Python Backend (Django REST) and a React/GraphQL Frontend for seamless user experiences.",
                 "Maintained a 99.9% accurate product catalog, improving inventory management and customer satisfaction."
               ]
             }
@@ -68,7 +393,7 @@
               "description": [
                 "Led the Agile team in developing a new web and mobile channel for Santander Bank, resulting in a 25% reduction in time-to-market for new features.",
                 "Managed and optimized the primary user website for Santander’s electronic banking platform, enhancing performance and user experience for 20.5 million customers in Mexico.",
-                "Spearheaded the frontend development using TypeScript with Angular and the backend API using Java, delivering a high-quality platform that significantly improved user engagement and satisfaction."
+                "Spearheaded the Frontend development using TypeScript with Angular and the Backend API using Java, delivering a high-quality platform that significantly improved user engagement and satisfaction."
               ]
             }
           ]
@@ -108,7 +433,7 @@
               "id": 0,
               "title": "Price Optimization Web-app for Cinepolis & Bimbo Canada",
               "description": [
-                "Developed and managed a dynamic pricing optimization web app for Cinepolis, leveraging React, MUI, and D3.js on the frontend, and Python Django REST with AWS on the backend, which improved price elasticity visibility and increased sales by 15% across 800+ cinemas.",
+                "Developed and managed a dynamic pricing optimization web app for Cinepolis, leveraging React, MUI, and D3.js on the Frontend, and Python Django REST with AWS on the Backend, which improved price elasticity visibility and increased sales by 15% across 800+ cinemas.",
                 "Enhanced data visualization capabilities for Bimbo Canada by integrating D3.js libraries with React, improving the granularity and clarity of dynamic pricing insights, leading to more informed decision-making."
               ]
             }
@@ -191,7 +516,7 @@
               "id": 0,
               "title": "Trainee Program - Enabled communication and data storage for Ann Taylor and Walmart.",
               "description": [
-                "Worked in a four-person team, creating skills in Information Management, such as: Data analysis, DataBase backup and recovery. Data-Marts model creation and design, Database monitoring, Capacity planning, performance and database security. Thus providing better views of data analytics for management projects."
+                "Worked in a four-person team, creating skills in Information Management, such as: Data analysis, DataBase backup and recovery. Data-Marts model creation and design, Database monitoring, Capacity planning, performance and Databases security. Thus providing better views of data analytics for management projects."
               ]
             }
           ]
@@ -278,22 +603,33 @@
       ]
     }
   ],
+  "education": [
+    {
+      "id": 0,
+      "school": "La Salle University",
+      "degree": "Cybernetics and Computer Engineering",
+      "year": "2011 - 2015",
+      "description": [
+        "Specialized in creating dynamic web solutions, blending software engineering with the latest in data science and AI technologies."
+      ]
+    }
+  ],
   "skills": [
     {
       "id": 0,
-      "category": "frontend",
+      "category": "Frontend",
       "name": "Javascript / NodeJS / React / Angular",
       "percentage": 85
     },
     {
       "id": 1,
-      "category": "backend",
+      "category": "Backend",
       "name": "Python / Django",
       "percentage": 80
     },
     {
       "id": 2,
-      "category": "databases",
+      "category": "Databasess",
       "name": "MySQL / PostgreSQL / MongoDB / Redis",
       "percentage": 70
     },
