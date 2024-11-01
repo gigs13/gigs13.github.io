@@ -35,7 +35,7 @@ export default function Experiencias() {
         alignItems="center"
       >
         <Grid item xs={12}>
-          <Box sx={{ flexGrow: 1, ml: 3 }}>
+          <Box sx={{ flexGrow: 1 }}>
             <Typography variant="h4" color="secondary">
               My professional journey
             </Typography>
